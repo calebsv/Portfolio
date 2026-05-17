@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caleb Lira | Front-End Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="shortcut icon" href="/assets/img/favicon.jpeg" type="image/x-icon">
+  <meta name="description" content="Portfólio Caleb lira | Front-End Developer">
+  <meta name="keywords" content=" ">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="query.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f172a',
+            secondary: '#10b981',
+            night: "#060419",
+          },
+          fontFamily: {
+            title: ['Poppins', 'sans-serif'],
+            brand: ['Space Grotesk', 'sans-serif'],
+            
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-sans bg-night text-gray-200 overflow-x-hidden">
+
+  <section
+    class="relative min-h-screen flex items-start justify-center px-4 pt-20 sm:px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-emerald-950"
+    id="home">
+    <nav
+      class="fixed top-0 left-0 w-full bg-transparent transition-all duration-300 ease-out backdrop-blur z-50 border-b border-secondary">
+      <div class="px-6 py-4 max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-2 font-bold text-xl">
+          <div class="w-9 h-9 flex items-center justify-center rounded-full bg-secondary text-primary font-bold"><img
+              src="/assets/img/favicon.jpeg" alt="Logo"
+              class="rounded-full hover:scale-110 transition-transform duration-300"></div>
+          <span
+            class="font-brand font-semibold hover:text-secondary transition-transform duration-300 transition-colors">
+            Caleb Lira</span>
+        </div>
+
+        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 flex items-center gap-10 font-brand text-lg">
+          <a href="#home" class="nav-link hover:text-secondary transition-colors">Home</a>
+          <a href="#about" class="nav-link hover:text-secondary transition-colors">About</a>
+          <a href="#skills" class="nav-link hover:text-secondary transition-colors">Skills</a>
+          <a href="#projects" class="nav-link hover:text-secondary transition-colors">Projects</a>
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="absolute top-0 left-0 w-72 h-72 sm:w-96 sm:h-96 bg-cyan-500/30 rounded-full blur-2xl animate-blob">
+    </div>
+    <div id="glow" class="pointer-events-none fixed w-32 h-32 sm:w-40 sm:h-40 bg-cyan-500/30 rounded-full blur-3xl">
+    </div>
+
+    <div
+      class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center text-center md:text-left mt-10 ">
+
+      <div class="flex flex-col items-center md:items-start md:ml-10">
+        <div class="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-60 lg:h-60">
+          <div
+            class="absolute inset-0 rounded-full bg-gradient-to-r from-sky-400 via-blue-500 to-cyan-400 blur-3xl opacity-40 animate-pulse">
+          </div>
+
+          <div class="relative w-full h-full rounded-full bg-gradient-to-br from-slate-200 to-slate-400 shadow-lg fade-in">
+            <img src="/assets/img/perfil.jpeg"
+              class="w-full h-full rounded-full object-cover border border-white/10 shadow-lg hover:scale-105 transition duration-300">
+          </div>
+        </div>
+
+        <h2 class="mt-2 text-sm sm:text-base md:text-lg font-brand font-bold bg-secondary px-3 py-1 rounded-full fade-in delay-1">
+          Caleb Lira - Front-End
+        </h2>
+      </div>
+
+      <div class="flex flex-col items-center md:items-start md:ml-10">
+
+        <h1 class="font-title mt-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3 leading-tigh fade-in delay-2">
+          Developing interfaces <span class="text-secondary">that shape perspectives.</span>
+        </h1>
+
+        <p class="mt-0 max-w-md text-sm sm:text-base md:text-lg text-slate-300 mb-5 font-brand fade-in delay-3">
+          Working on building
+          <span class="text-sky-400">modern</span>, high-performance applications
+          focused on <span class="text-yellow-400">user experience</span>.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto fade-in delay-4">
+
+          <a href="#projects"
+            class="text-center px-6 py-3 bg-secondary text-primary font-brand rounded-lg font-semibold hover:-translate-y-1 transition btnBrowse transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,200,0.7)]">
+            View My Projects
+          </a>
+
+          <button class="relative overflow-hidden
+  px-6 py-3 rounded-lg
+  border border-secondary
+  text-white font-semibold
+  hover:-translate-y-1
+  transition-all duration-300
+  group  hover:shadow-[0_0_30px_rgba(0,255,200,0.7)] font-brand">
+
+            <span class="absolute inset-0
+    bg-gradient-to-r from-cyan-400 to-emerald-400
+    scale-x-0 origin-left
+    transition-transform duration-500
+    group-hover:scale-x-100">
+            </span>
+
+            <a href="#" class="relative z-10
+    group-hover:text-slate-900
+    transition-colors duration-300">
+              Download CV
+          </a>
+
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="fade-inn card">
+    <section id="about" class="relative py-20 max-w-6xl mx-auto px-6 font-brand bg-night">
+      <h2 class="text-4xl font-bold text-center mb-10 text-white">Get To Know Me</h2>
+      <p class="text-center mb-8 font-semibold text-secondary">Creating modern interfaces focused on best perfomance and experience.</p>
+
+      <div class="grid grid-cols-1 md:grid grid-cols-3 gap-4">
+        <div class="bg-gradient-to-br from-slate-900 to slate-900 rounded-xl p-5 transition-all duration-500 ease-in-out"></div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- SKILLS -->
+  <div class="fade-inn card">
+    <section id="skills"
+      class="min-h-[80vh] py-20 px-10 font-brand bg-gradient-to-br from-slate-900 via-blue-950 to-emerald-950 py-20 text-white">
+      <h2 class="text-3xl font-bold text-center mb-12">Technology Stack</h2>
+      <p class="text-center mb-8 font-semibold text-secondary">The technologies I have affinity for to achieve better
+        performance in <br>building web applications.</p>
+
+      <div class="container mx-auto px-4">
+        <div class="rounded-lg shadow-md overflow-hidden">
+          <div class="w-full bg-secondary border border-secondary h-12 flex items-center justify-center">
+            <h3 class="font-bold text-white text-center">Languages</h3>
+          </div>
+
+          <div class="p-6 bg-primary flex gap-6 md:flex-row flex-col justify-center items-center">
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/html5/html5-original.svg"
+                  class="w-16 h-16 skill-icon" alt="HTML5" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">HTML5</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/css3/css3-original.svg"
+                  class="w-16 h-16 skill-icon" alt="CSS" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">CSS</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/javascript/javascript-original.svg"
+                  class="w-16 h-16 skill-icon" alt="JavaScript" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">JavaScript</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 rounded-lg shadow-md overflow-hidden">
+          <div class="w-full bg-secondary border border-secondary h-12 flex items-center justify-center">
+            <h3 class="font-bold text-white text-center">Frameworks & Libraries</h3>
+          </div>
+
+          <div class="p-6 bg-primary flex gap-6 md:flex-row flex-col justify-center items-center">
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/tailwindcss/tailwindcss-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Tailwind CSS" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Tailwind CSS</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/bootstrap/bootstrap-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Bootstrap" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 rounded-lg p-4 bg-secondary text-center">
+            <h3 class="text-center text-white">Other Tools</h3>
+          </div>
+
+
+          <div class="p-6 bg-primary flex gap-6 md:flex-row flex-col justify-center items-center">
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/figma/figma-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Figma" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Figma</span>
+              </div>
+            </div>
+
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/npm/npm-original-wordmark.svg"
+                  class="w-16 h-16 skill-icon" alt="NPM" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">NPM</span>
+              </div>
+            </div>
+
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/git/git-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Git" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Git</span>
+              </div>
+            </div>
+
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/github/github-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Github" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Github</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/nodejs/nodejs-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Node Js " />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Node Js</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="fade-inn card">
+    <section id="projects" class="py-20 bg-primary/80 font-brand">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
+        <p class="text-center mb-8 font-semibold text-secondary">A range of projects I have developed in pursuit of
+          improving
+          my development skills.<br> All built with a focus on Front-End and conflict resolution.</p>
+
+        <div class="projects-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <article class="project-card">
+            <div class="project-image-container">
+              <img src="" alt="Projeto-1" class="project-image" loading="lazy">
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-white"></h3>
+              <p class="text-gray-400 text-sm mb-4"></p>
+              <div class="flex justify-between items-center">
+                <div class="flex gap-4">
+                  <a href="" target="_blank" class="text-secondary hover:text-green-400 transition-colors"><i
+                      class="fab fa-github text-xl"></i>
+                  </a>
+                </div>
+                <a href=""
+                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"><span>Access
+                    here</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-container">
+              <img src="" alt="Projeto-2" class="project-image" loading="lazy">
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-white"></h3>
+              <p class="text-gray-400 text-sm mb-4"></p>
+              <div class="flex justify-between items-center">
+                <div class="flex gap-4">
+                  <a href="" target="_blank" class="text-secondary hover:text-green-400 transition-colors"><i
+                      class="fab fa-github text-xl"></i>
+                  </a>
+                </div>
+                <a href=""
+                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"><span>Access
+                    here</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-container">
+              <img src="" alt="Projeto-3" class="project-image" loading="lazy">
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-white"></h3>
+              <p class="text-gray-400 text-sm mb-4"></p>
+              <div class="flex justify-between items-center">
+                <div class="flex gap-4">
+                  <a href="" target="_blank" class="text-secondary hover:text-green-400 transition-colors"><i
+                      class="fab fa-github text-xl"></i>
+                  </a>
+                </div>
+                <a href=""
+                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"><span>Access
+                    here</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-container">
+              <img src="/assets/img/projeto-4.png" alt="Projeto-4" class="project-image" loading="lazy">
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-white">Restaurante Lira</h3>
+              <p class="text-gray-400 text-sm mb-4">A fictitious restaurant focused on providing a unique gastronomic
+                experience for your palate. Where there is a menu with varied dishes and fresh ingredients.</p>
+              <div class="flex justify-between items-center">
+                <div class="flex gap-4">
+                  <a href="https://github.com/calebsv/Restaurante-Lira" target="_blank"
+                    class="text-secondary hover:text-green-400 transition-colors"><i class="fab fa-github text-xl"></i>
+                  </a>
+                </div>
+                <a href="https://restaurante-lira.netlify.app/"
+                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"><span>Access
+                    here</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-container">
+              <img src="/assets/img/projeto-5.jpeg" alt="Projeto-5" class="project-image" loading="lazy">
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-white">Good Barber</h3>
+              <p class="text-gray-400 text-sm mb-4">Welcome to Good Barber, a barbershop focused on enhancing your
+                self-esteem and self-care. This project was created to demonstrate a modern interface using the
+                Bootstrap framework.</p>
+              <div class="flex justify-between items-center">
+                <div class="flex gap-4">
+                  <a href="https://github.com/calebsv/Good-Barber" target="_blank"
+                    class="text-secondary hover:text-green-400 transition-colors"><i class="fab fa-github text-xl"></i>
+                  </a>
+                </div>
+                <a href="https://good-barber.netlify.app/"
+                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"><span>Access
+                    here</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-primary border-t border-secondary py-10 font-brand">
+    <div class="container mx-auto px-6">
+
+      <!-- Conteúdo principal -->
+      <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-10">
+
+        <!-- Identidade -->
+        <div class="flex flex-col items-center md:items-start text-center md:text-left gap-3">
+          <div class="flex items-center gap-2 font-bold text-xl">
+            <span class="w-9 h-9 rounded-full bg-secondary flex items-center justify-center text-primary">
+              C
+            </span>
+            <span class="font-semibold text-white">Caleb Lira</span>
+          </div>
+
+          <p class="text-gray-300 max-w-xs">
+            Front-end developer creating<br />
+            interactive and professional interfaces.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-3 text-center gap-3">
+          <h3 class="font-semibold text-secondary">Connect</h3>
+          <div class="flex justify-center gap-5 text-3xl text-white">
+            <a href="https://github.com/calebsv" target="_blank" class="hover:text-secondary transition-colors">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:contatocaleb2010@gmail.com" class="hover:text-secondary transition-colors">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/caleb-lira-705182249/" target="_blank"
+              class="hover:text-secondary transition-colors">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links rápidos -->
+        <div class="text-center md:text-right">
+          <h3 class="text-secondary font-semibold mb-3">Links Rápidos</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#home" class="hover:text-white transition">Home</a></li>
+            <li><a href="#about" class="hover:text-white transition">About</a></li>
+            <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
+            <li><a href="#skills" class="hover:text-white transition">Skills</a></li>
+          </ul>
+        </div>
+
+        <!-- Redes sociais -->
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-10 text-center text-gray-400 text-sm">
+        &copy; 2026 Developed by Caleb Lira. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js">
+  </script>
+
+
+</body>
+
+</html>
