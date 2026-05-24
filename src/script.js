@@ -200,3 +200,11 @@ function renderizar(tab){
 
   }, 250);
 }
+
+groupButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    renderizar(button.dataset.tab);
+  });
+});
+
+renderizar("languages");
