@@ -134,13 +134,6 @@ html {
 .animate-blob {
   animation: blob 5s infinite ease-in-out;
 }
-.skill-icon {
-  transition: transform 0.3s ease;
-}
-
-.skill-card:hover .skill-icon {
-  transform: scale(1.1);
-}
 
 .project-card {
   background: linear-gradient(
