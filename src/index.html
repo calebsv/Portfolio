@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caleb Lira | Front-End Developer</title>
+  <title>Caleb Lira | Web Developer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
@@ -22,7 +22,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="query.css">
   <script>
     tailwind.config = {
       theme: {
@@ -125,7 +124,7 @@
   transition-all duration-300
   group  hover:shadow-[0_0_30px_rgba(0,255,200,0.7)] font-brand">
 
-            <span class="absolute inset-0
+            <span class="absolute inset-0 
     bg-gradient-to-r from-cyan-400 to-emerald-400
     scale-x-0 origin-left
     transition-transform duration-500
@@ -202,8 +201,7 @@
     </section>
   </div>
 
-
-  <!-- SKILLS -->
+  <!-- techs -->
   <div class="fade-inn card">
     <section id="skills"
       class="h-auto py-20 px-10 font-brand bg-gradient-to-br from-slate-900 via-blue-950 to-emerald-950 text-white">
@@ -211,29 +209,215 @@
       <p class="text-center mb-8 font-semibold text-secondary">The technologies I have affinity for to achieve better
         performance in <br>building web applications.</p>
 
-      <div class="max-w-5xl mx-auto px-[20px] py-[20px]">
-        <div
-          class="flex flex-wrap justify-center gap-3 font-brand items-center my-6 px-4 py-4 bg-primary rounded-xl backdrop-blur-md border border-slate-700/30 w-full max-w-fit mx-auto">
-          <button
-            class="px-[10px] py-[8px] font-sm font-bold rounded-lg transition duration-300 focus:ring-2 focus:ring-secondary focus:shadow-lg"
-            data-tab="languages">Languages</button>
-          <button
-            class="px-[10px] py-[8px] font-sm font-bold rounded-lg transition duration-300 focus:ring-2 focus:ring-secondary focus:shadow-lg"
-            data-tab="frameworks">Frameworks</button>
-          <button
-            class="px-[10px] py-[8px] font-sm font-bold rounded-lg transition duration-300 focus:ring-2 focus:ring-secondary focus:shadow-lg"
-            data-tab="tools">Tools</button>
+      <div class="py-6 px-4 space-y-10">
+        <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg space-x-3">
+          <h2 class="text-2xl font-bold mb-4 text-center">Development</h2>
+          <button id="prevFront"
+            class="opacity-0 pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
+            <i class="bi bi-chevron-left text-xl"></i>
+          </button>
+          <div class="flex gap-6 overflow-x-auto scroll-smooth px-12" id="frontSlider">
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/html5/html5-original.svg"
+                  class="w-16 h-16 skill-icon" alt="HTML5" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">HTML5</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/css3/css3-original.svg"
+                  class="w-16 h-16 skill-icon" alt="CSS" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">CSS</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/javascript/javascript-original.svg"
+                  class="w-16 h-16 skill-icon" alt="JavaScript" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">JavaScript ES6+</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/react/react-original.svg"
+                  class="w-16 h-16 skill-icon" alt="React" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">React.js</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/php/php-original.svg"
+                  class="w-16 h-16 skill-icon" alt="PHP" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">PHP</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/nodejs/nodejs-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Node.js" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Node.js</span>
+              </div>
+            </div>
+          </div>
+          <button id="nextFront"
+            class="opacity-0 pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
+            <i class="bi bi-chevron-right text-white"></i>
+          </button>
         </div>
 
-        <div
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 transition-all duration-300 ease-out opacity-100 translate-y-0 mt-8"
-          id="skills-grid">
+        <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg">
+          <h2 class="text-2xl font-bold mb-4 text-center">Styling UI</h2>
+          <div class="flex justify-center gap-6 flex-wrap">
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/tailwindcss/tailwindcss-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Tailwind CSS" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Tailwind CSS</span>
+              </div>
+            </div>
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/bootstrap/bootstrap-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Bootstrap" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Bootstrap</span>
+              </div>
+            </div>
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/figma/figma-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Figma" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Figma</span>
+              </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg space-x-3">
+          <h2 class="text-2xl font-bold mb-4 text-center">Tools</h2>
+          <button id="previousFront"
+            class="opacity-0 pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
+            <i class="bi bi-chevron-left text-xl"></i>
+          </button>
+          <div class="flex gap-6 overflow-x-auto scroll-smooth px-12" id="develoupSlider">
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/git/git-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Git" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Git</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/github/github-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Github" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Github</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/npm/npm-original-wordmark.svg"
+                  class="w-16 h-16 skill-icon" alt="NPM" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">NPM</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/yarn/yarn-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Yarn" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Yarn</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/vite/vite-original.svg"
+                  class="w-16 h-16 skill-icon" alt="Vite" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Vite</span>
+              </div>
+            </div>
+
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <i class="fas fa-code-branch fa-3x text-blue-400"></i>
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">API</span>
+              </div>
+            </div>
+            <div
+              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/c/c-original.svg" alt="C"
+                  class="w-16 h-16 skill-icon" />
+              </div>
+              <div class="text-center mt-2">
+                <span class="text-sm font-medium">Language C</span>
+              </div>
+            </div>
+          </div>
+          <button id="nextiousFront"
+            class="opacity-0 pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
+            <i class="bi bi-chevron-right text-white"></i>
+          </button>
         </div>
       </div>
-    </section>
+  </div>
+  </section>
   </div>
 
-  <!-- PROJECTS -->
+  <!-- projects -->
   <div class="fade-inn card">
     <section id="projects" class="py-20 bg-primary/80 font-brand">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -245,20 +429,22 @@
         <div class="projects-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <article class="project-card">
             <div class="project-image-container">
-              <img src="" alt="Projeto-1" class="project-image" loading="lazy">
+              <img src="/assets/img/projeto-1.png" alt="Projeto-1" class="project-image" loading="lazy">
             </div>
 
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2 text-white"></h3>
-              <p class="text-gray-400 text-sm mb-4"></p>
+              <h3 class="text-xl font-bold mb-2 text-white">Imperial Barber</h3>
+              <p class="text-gray-400 text-sm mb-4">A modern barber shop website with a focus on user experience and
+                responsive design. Developed with a focus on modern web technologies, javascript, and Bootstrap.</p>
               <div class="flex justify-between items-center">
                 <div class="flex gap-4">
-                  <a href="" target="_blank" class="text-secondary hover:text-green-400 transition-colors"><i
-                      class="fab fa-github text-xl"></i>
+                  <a href="https://github.com/calebsv/Imperial-Barber" target="_blank"
+                    class="text-secondary hover:text-green-400 transition-colors"><i class="fab fa-github text-xl"></i>
                   </a>
                 </div>
-                <a href=""
-                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"><span>Access
+                <a href="https://impbarber.netlify.app/"
+                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"
+                  target="_self"><span>Access
                     here</span>
                 </a>
               </div>
@@ -396,7 +582,6 @@
           </div>
         </div>
 
-        <!-- Links rápidos -->
         <div class="text-center md:text-right">
           <h3 class="text-secondary font-semibold mb-3">Links</h3>
           <ul class="space-y-2 text-gray-400">
@@ -407,11 +592,9 @@
           </ul>
         </div>
 
-        <!-- Redes sociais -->
 
       </div>
 
-      <!-- Copyright -->
       <div class="mt-10 text-center text-gray-400 text-sm">
         &copy; 2026 Developed by Caleb Lira. All rights reserved.
       </div>
