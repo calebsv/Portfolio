@@ -8,8 +8,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-  <link rel="shortcut icon" href="/assets/img/favicon.jpeg" type="image/x-icon">
-  <meta name="description" content="Portfólio Caleb lira | Front-End Developer">
+  <link rel="shortcut icon" href="assets/img/favicon.jpeg" type="image/x-icon">
+  <meta name="description" content="Portfólio Caleb lira | Web Developer">
   <meta name="keywords" content=" ">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,14 +45,14 @@
 <body class="font-sans bg-night text-gray-200 overflow-x-hidden">
 
   <section
-    class="relative min-h-screen flex items-start justify-center px-4 pt-20 sm:px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-emerald-950"
+    class="relative overflow-hidden min-h-screen flex items-start justify-center px-4 pt-20 sm:px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-emerald-950"
     id="home">
     <nav
       class="fixed top-0 left-0 w-full bg-transparent transition-all duration-300 ease-out backdrop-blur z-50 border-b border-secondary">
       <div class="px-6 py-4 max-w-7xl mx-auto flex items-center justify-between">
         <div class="flex items-center gap-2 font-bold text-xl">
           <div class="w-9 h-9 flex items-center justify-center rounded-full bg-secondary text-primary font-bold"><img
-              src="/assets/img/favicon.jpeg" alt="Logo"
+              src="assets/img/favicon.jpeg" alt="Logo"
               class="rounded-full hover:scale-110 transition-transform duration-300"></div>
           <span
             class="font-brand font-semibold hover:text-secondary transition-transform duration-300 transition-colors">
@@ -66,9 +66,27 @@
           <a href="#projects" class="nav-link hover:text-secondary transition-colors">Projects</a>
         </div>
 
+        <!-- Botão hambúrguer agora DENTRO do flex, alinhado com a logo -->
+        <button id="menuBtn" class="md:hidden relative w-8 h-6 flex flex-col justify-between z-50"
+          aria-label="Abrir menu">
+          <span class="hamburger-line block h-0.5 w-full bg-white rounded"></span>
+          <span class="hamburger-line block h-0.5 w-full bg-white rounded"></span>
+          <span class="hamburger-line block h-0.5 w-full bg-white rounded"></span>
+        </button>
+
       </div>
     </nav>
 
+    <div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-slate-900/95 backdrop-blur-lg border-l border-secondary z-40
+         flex flex-col items-center justify-center gap-8 font-brand text-xl
+         translate-x-full transition-transform duration-300 ease-in-out">
+      <a href="#home" class="mobile-link hover:text-secondary transition-colors">Home</a>
+      <a href="#about" class="mobile-link hover:text-secondary transition-colors">About</a>
+      <a href="#skills" class="mobile-link hover:text-secondary transition-colors">Skills</a>
+      <a href="#projects" class="mobile-link hover:text-secondary transition-colors">Projects</a>
+    </div>
+
+    <div id="menuOverlay" class="fixed inset-0 bg-black/60 z-30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
     <div class="absolute top-0 left-0 w-72 h-72 sm:w-96 sm:h-96 bg-cyan-500/30 rounded-full blur-2xl animate-blob">
     </div>
     <div id="glow" class="pointer-events-none fixed w-32 h-32 sm:w-40 sm:h-40 bg-cyan-500/30 rounded-full blur-3xl">
@@ -85,14 +103,14 @@
 
           <div
             class="relative w-full h-full rounded-full bg-gradient-to-br from-slate-200 to-slate-400 shadow-lg fade-in">
-            <img src="/assets/img/perfil.jpeg"
+            <img src="assets/img/perfil.jpeg"
               class="w-full h-full rounded-full object-cover border border-white/10 shadow-lg hover:scale-105 transition duration-300">
           </div>
         </div>
 
         <h2
           class="mt-2 text-sm sm:text-base md:text-lg font-brand font-bold bg-secondary px-3 py-1 rounded-full fade-in delay-1">
-          Caleb Lira - Front-End
+          Caleb Lira - Web Developer
         </h2>
       </div>
 
@@ -131,7 +149,7 @@
     group-hover:scale-x-100">
             </span>
 
-            <a href="/assets/img/Currículo Caleb Lira.pdf" class="relative z-10
+            <a href="assets/img/Currículo Caleb Lira.pdf" target="_self" class="relative z-10
     group-hover:text-slate-900
     transition-colors duration-300">
               Download CV
@@ -163,7 +181,7 @@
             <h3>About Me</h3>
           </div>
           <div class="text-white text-lg mb-[0.75rem] text-base/7">
-            <p>My name is Caleb da Silva Lira Ribeiro. I work as a Front-End Developer focusing on solutions for current
+            <p>My name is Caleb da Silva Lira Ribeiro. I work as a Web Developer focusing on solutions for current
               technologies.</p>
           </div>
         </div>
@@ -210,7 +228,7 @@
         performance in <br>building web applications.</p>
 
       <div class="py-6 px-4 space-y-10">
-        <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg space-x-3">
+        <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg">
           <h2 class="text-2xl font-bold mb-4 text-center">Development</h2>
           <button id="prevFront"
             class="opacity-0 pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
@@ -295,7 +313,8 @@
             <div
               class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
               <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/tailwindcss/tailwindcss-original.svg"
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/tailwindcss/tailwindcss-original.svg"
                   class="w-16 h-16 skill-icon" alt="Tailwind CSS" />
               </div>
               <div class="text-center mt-2">
@@ -322,10 +341,10 @@
                 <span class="text-sm font-medium">Figma</span>
               </div>
             </div>
+          </div>
         </div>
-        </div>
-        
-        <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg space-x-3">
+
+        <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg">
           <h2 class="text-2xl font-bold mb-4 text-center">Tools</h2>
           <button id="previousFront"
             class="opacity-0 pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
@@ -424,27 +443,27 @@
         <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
         <p class="text-center mb-8 font-semibold text-secondary">A range of projects I have developed in pursuit of
           improving
-          my development skills.<br> All built with a focus on Front-End and conflict resolution.</p>
+          my development skills.<br> All built with a focus on Web development and conflict resolution.</p>
 
         <div class="projects-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <article class="project-card">
             <div class="project-image-container">
-              <img src="/assets/img/projeto-1.png" alt="Projeto-1" class="project-image" loading="lazy">
+              <img src="assets/img/Projeto-1.png" alt="Projeto-1" class="project-image" loading="lazy">
             </div>
 
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2 text-white">Imperial Barber</h3>
-              <p class="text-gray-400 text-sm mb-4">A modern barber shop website with a focus on user experience and
-                responsive design. Developed with a focus on modern web technologies, javascript, and Bootstrap.</p>
+              <h3 class="text-xl font-bold mb-2 text-white">SnapPdf</h3>
+              <p class="text-gray-400 text-sm mb-4">A document conversion system for PDF uploads all in real time and
+                fully operational. The goal is to make the process as a convenient as possible.</p>
               <div class="flex justify-between items-center">
                 <div class="flex gap-4">
-                  <a href="https://github.com/calebsv/Imperial-Barber" target="_blank"
+                  <a href="https://github.com/calebsv/SnapPdf" target="_blank"
                     class="text-secondary hover:text-green-400 transition-colors"><i class="fab fa-github text-xl"></i>
                   </a>
                 </div>
-                <a href="https://impbarber.netlify.app/"
+                <a href="https://snappdf.freedev.app/"
                   class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"
-                  target="_self"><span>Access
+                  target="_blank"><span>Access
                     here</span>
                 </a>
               </div>
