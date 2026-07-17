@@ -9,7 +9,9 @@
   box-sizing: border-box;
 }
 
-html {
+html ,body{
+  overflow-x: hidden;
+  width:100%;
   scroll-behavior: smooth;
 }
 
@@ -37,6 +39,8 @@ html {
 .btnBrowse:hover::before {
   left: 100%;
 }
+
+
 .nav-link {
   position: relative;
   padding-bottom: 2px;
@@ -334,3 +338,51 @@ nav.scrolled {
 #develoupSlider {
     scrollbar-width: none;
 }
+
+@media (max-width: 768px){
+  #glow {
+    display:none;
+  }
+}
+
+.hamburger-line {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+#menuBtn.open .hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+#menuBtn.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+#menuBtn.open .hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+#mobileMenu.open {
+  transform: translateX(0);
+}
+
+#menuOverlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-link {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#mobileMenu.open .mobile-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#mobileMenu.open .mobile-link:nth-child(1) { transition-delay: 0.1s; }
+#mobileMenu.open .mobile-link:nth-child(2) { transition-delay: 0.15s; }
+#mobileMenu.open .mobile-link:nth-child(3) { transition-delay: 0.2s; }
+#mobileMenu.open .mobile-link:nth-child(4) { transition-delay: 0.25s; }

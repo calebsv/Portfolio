@@ -118,3 +118,23 @@ previBtn.addEventListener("click", () => {
 sliderr.addEventListener("scroll", updateeButtons);
 updateeButtons();
 
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuOverlay = document.getElementById("menuOverlay");
+const mobileLinks = document.querySelectorAll(".mobile-link");
+
+function toggleMenu() {
+  menuBtn.classList.toggle("open");
+  mobileMenu.classList.toggle("open");
+  menuOverlay.classList.toggle("open");
+  document.body.classList.toggle("overflow-hidden");
+}
+
+menuBtn.addEventListener("click", toggleMenu);
+menuOverlay.addEventListener("click", toggleMenu);
+
+mobileLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (mobileMenu.classList.contains("open")) toggleMenu();
+  });
+});
