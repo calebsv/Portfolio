@@ -9,9 +9,10 @@
   box-sizing: border-box;
 }
 
-html ,body{
+html,
+body {
   overflow-x: hidden;
-  width:100%;
+  width: 100%;
   scroll-behavior: smooth;
 }
 
@@ -39,7 +40,6 @@ html ,body{
 .btnBrowse:hover::before {
   left: 100%;
 }
-
 
 .nav-link {
   position: relative;
@@ -75,18 +75,6 @@ html ,body{
   color: #10b981;
   margin-bottom: 1.5rem;
   text-align: center;
-}
-.fade-inn {
-  opacity: 0;
-  transform: translateY(30px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
-}
-
-.fade-inn.active {
-  opacity: 1;
-  transform: translateY(0);
 }
 .typing {
   overflow: hidden;
@@ -287,7 +275,7 @@ nav.scrolled {
 }
 
 .skill-card:hover {
-  transform:translateY(-6px) scale(1.05) ;
+  transform: translateY(-6px) scale(1.05);
   box-shadow:
     0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -323,30 +311,31 @@ nav.scrolled {
 }
 
 #frontSlider::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 #frontSlider {
-    scrollbar-width: none;
+  scrollbar-width: none;
 }
 
-
 #develoupSlider::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 #develoupSlider {
-    scrollbar-width: none;
+  scrollbar-width: none;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   #glow {
-    display:none;
+    display: none;
   }
 }
 
 .hamburger-line {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   transform-origin: center;
 }
 
@@ -374,7 +363,9 @@ nav.scrolled {
 .mobile-link {
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 #mobileMenu.open .mobile-link {
@@ -382,7 +373,49 @@ nav.scrolled {
   transform: translateY(0);
 }
 
-#mobileMenu.open .mobile-link:nth-child(1) { transition-delay: 0.1s; }
-#mobileMenu.open .mobile-link:nth-child(2) { transition-delay: 0.15s; }
-#mobileMenu.open .mobile-link:nth-child(3) { transition-delay: 0.2s; }
-#mobileMenu.open .mobile-link:nth-child(4) { transition-delay: 0.25s; }
+#mobileMenu.open .mobile-link:nth-child(1) {
+  transition-delay: 0.1s;
+}
+#mobileMenu.open .mobile-link:nth-child(2) {
+  transition-delay: 0.15s;
+}
+#mobileMenu.open .mobile-link:nth-child(3) {
+  transition-delay: 0.2s;
+}
+#mobileMenu.open .mobile-link:nth-child(4) {
+  transition-delay: 0.25s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
