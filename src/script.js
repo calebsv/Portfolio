@@ -129,3 +129,7 @@ mobileLinks.forEach(link => {
         if (mobileMenu.classList.contains("open")) toggleMenu();
     });
 });
+
+const footerYear = document.getElementById("footer-year");
+
+footerYear.textContent = new Date().getFullYear();

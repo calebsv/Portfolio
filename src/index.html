@@ -1,646 +1,269 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caleb Lira | Web Developer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-  <link rel="shortcut icon" href="assets/img/favicon.jpeg" type="image/x-icon">
-  <meta name="description" content="Portfólio Caleb lira | Front-End Developer">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#0f172a',
-            secondary: '#10b981',
-            night: "#060419",
-          },
-          fontFamily: {
-            title: ['Poppins', 'sans-serif'],
-            brand: ['Space Grotesk', 'sans-serif'],
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEU NOME — Portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-1:#05070B;
+    --bg-2:#0C1220;
+    --crimson:#AE1230;
+    --crimson-light:#E8385A;
+    --text:#EDEDF2;
+    --muted:#6E7688;
+    --line:rgba(237,237,242,0.08);
+  }
 
-          }
-        }
-      }
-    }
-  </script>
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html,body{ height:100%; }
+
+  body{
+    background:
+      radial-gradient(1100px 700px at 78% 20%, rgba(174,18,48,0.16), transparent 60%),
+      radial-gradient(900px 600px at 15% 85%, rgba(23,40,70,0.35), transparent 55%),
+      linear-gradient(160deg, var(--bg-1), var(--bg-2) 70%);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* textura de scanline sutil, clima de HUD */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.012) 0px,
+      rgba(255,255,255,0.012) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events:none;
+    z-index:1;
+  }
+
+  /* --- HUD: cantos e topo --- */
+  .hud-corner{
+    position:fixed;
+    width:26px; height:26px;
+    border-color:rgba(237,237,242,0.25);
+    z-index:5;
+  }
+  .hud-tl{ top:24px; left:24px; border-top:1.5px solid; border-left:1.5px solid; }
+  .hud-tr{ top:24px; right:24px; border-top:1.5px solid; border-right:1.5px solid; }
+  .hud-bl{ bottom:24px; left:24px; border-bottom:1.5px solid; border-left:1.5px solid; }
+  .hud-br{ bottom:24px; right:24px; border-bottom:1.5px solid; border-right:1.5px solid; }
+
+  .brand{
+    position:relative;
+    z-index:5;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:34px 0 0 60px;
+  }
+  .brand-mark{
+    width:20px; height:20px;
+    border:1.5px solid var(--crimson-light);
+    transform:rotate(45deg);
+  }
+  .brand-text{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    color:var(--muted);
+  }
+
+  /* --- layout principal --- */
+  main{
+    position:relative;
+    z-index:5;
+    min-height:calc(100vh - 60px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:56px;
+    padding:40px 8vw;
+    flex-wrap:wrap;
+  }
+
+  /* painel retrato abstrato */
+  .portrait{
+    position:relative;
+    width:220px;
+    height:280px;
+    flex:0 0 auto;
+    background:linear-gradient(200deg, var(--crimson-light), var(--crimson) 55%, #4a0716 100%);
+    clip-path:polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .portrait img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+    /* deixa a foto em duotone vermelho, combinando com o painel */
+    filter:grayscale(1) contrast(1.15);
+    mix-blend-mode:luminosity;
+    opacity:0.95;
+  }
+  .portrait::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(0deg, rgba(0,0,0,0.35), transparent 55%);
+  }
+
+  .title-block{
+    flex:1 1 420px;
+    max-width:560px;
+  }
+
+  .title-row{
+    display:flex;
+    align-items:baseline;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+
+  h1{
+    font-family:'Bebas Neue', sans-serif;
+    font-weight:400;
+    font-size:clamp(3.2rem, 8vw, 6.4rem);
+    letter-spacing:0.02em;
+    line-height:0.9;
+    color:var(--text);
+  }
+
+  .year{
+    font-family:'JetBrains Mono', monospace;
+    font-size:1.15rem;
+    color:var(--crimson-light);
+    letter-spacing:0.05em;
+  }
+
+  .subtitle{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:18px 0 46px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.14em;
+    color:var(--muted);
+  }
+  .subtitle .sq{
+    width:8px; height:8px;
+    background:var(--crimson-light);
+  }
+
+  /* --- menu estilo jogo --- */
+  .menu{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+
+  .menu-item{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:13px 4px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:15px;
+    letter-spacing:0.12em;
+    color:var(--muted);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+    max-width:340px;
+    transition:color .2s ease, padding-left .2s ease;
+  }
+
+  .menu-item .marker{
+    width:0px;
+    height:2px;
+    background:var(--crimson-light);
+    transition:width .2s ease;
+  }
+
+  .menu-item:hover,
+  .menu-item:focus-visible{
+    color:var(--text);
+    padding-left:14px;
+  }
+  .menu-item:hover .marker,
+  .menu-item:focus-visible .marker{
+    width:22px;
+  }
+
+  .menu-item.primary{ color:var(--text); }
+  .menu-item.primary .marker{ width:22px; background:var(--crimson-light); }
+  .menu-item.primary:hover{ color:var(--crimson-light); }
+
+  footer{
+    position:relative;
+    z-index:5;
+    text-align:center;
+    padding:0 0 34px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    color:var(--muted);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+  }
+
+  @media (max-width:720px){
+    main{ flex-direction:column; text-align:center; gap:34px; }
+    .title-row{ justify-content:center; }
+    .subtitle{ justify-content:center; }
+    .menu-item{ margin:0 auto; }
+  }
+</style>
 </head>
+<body>
 
-<body class="font-sans bg-night text-gray-200 overflow-x-hidden">
-
-  <section
-    class="relative overflow-hidden min-h-screen flex items-start justify-center px-4 pt-20 sm:px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-emerald-950"
-    id="home">
-    <nav
-      class="fixed top-0 left-0 w-full bg-transparent transition-all duration-300 ease-out backdrop-blur z-50 border-b border-secondary">
-      <div class="px-6 py-4 max-w-7xl mx-auto flex items-center justify-between">
-        <div class="flex items-center gap-2 font-bold text-xl">
-          <div class="w-9 h-9 flex items-center justify-center rounded-full bg-secondary text-primary font-bold"><img
-              src="assets/img/favicon.jpeg" alt="Logo"
-              class="rounded-full hover:scale-110 transition-transform duration-300"></div>
-          <span
-            class="font-brand font-semibold hover:text-secondary transition-transform duration-300 transition-colors">
-            Caleb Lira</span>
-        </div>
-
-        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 flex items-center gap-10 font-brand text-lg">
-          <a href="#home" class="nav-link hover:text-secondary transition-colors">Home</a>
-          <a href="#about" class="nav-link hover:text-secondary transition-colors">About</a>
-          <a href="#skills" class="nav-link hover:text-secondary transition-colors">Skills</a>
-          <a href="#projects" class="nav-link hover:text-secondary transition-colors">Projects</a>
-        </div>
-
-        <button id="menuBtn" class="md:hidden relative w-8 h-6 flex flex-col justify-between z-50"
-          aria-label="Abrir menu">
-          <span class="hamburger-line block h-0.5 w-full bg-white rounded"></span>
-          <span class="hamburger-line block h-0.5 w-full bg-white rounded"></span>
-          <span class="hamburger-line block h-0.5 w-full bg-white rounded"></span>
-        </button>
-
-      </div>
-    </nav>
-
-    <div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-slate-900/95 backdrop-blur-lg border-l border-secondary z-40
-         flex flex-col items-center justify-center gap-8 font-brand text-xl
-         translate-x-full transition-transform duration-300 ease-in-out">
-      <a href="#home" class="mobile-link hover:text-secondary transition-colors">Home</a>
-      <a href="#about" class="mobile-link hover:text-secondary transition-colors">About</a>
-      <a href="#skills" class="mobile-link hover:text-secondary transition-colors">Skills</a>
-      <a href="#projects" class="mobile-link hover:text-secondary transition-colors">Projects</a>
-    </div>
-
-    <div id="menuOverlay" class="fixed inset-0 bg-black/60 z-30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
-    <div class="absolute top-0 left-0 w-72 h-72 sm:w-96 sm:h-96 bg-cyan-500/30 rounded-full blur-2xl animate-blob">
-    </div>
-    <div id="glow" class="pointer-events-none fixed w-32 h-32 sm:w-40 sm:h-40 bg-cyan-500/30 rounded-full blur-3xl">
-    </div>
-
-    <div
-      class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center text-center md:text-left mt-10 ">
-
-      <div class="flex flex-col items-center md:items-start md:ml-10">
-        <div class="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-60 lg:h-60">
-          <div
-            class="absolute inset-0 rounded-full bg-gradient-to-r from-sky-400 via-blue-500 to-cyan-400 blur-3xl opacity-40 animate-pulse">
-          </div>
-
-          <div
-            class="relative w-full h-full rounded-full bg-gradient-to-br from-slate-200 to-slate-400 shadow-lg fade-in">
-            <img src="assets/img/perfil.jpeg"
-              class="w-full h-full rounded-full object-cover border border-white/10 shadow-lg hover:scale-105 transition duration-300">
-          </div>
-        </div>
-
-        <h2
-          class="mt-2 text-sm sm:text-base md:text-lg font-brand font-bold bg-secondary px-3 py-1 rounded-full fade-in delay-1">
-          Caleb Lira - Front-End 
-        </h2>
-      </div>
-
-      <div class="flex flex-col items-center md:items-start md:ml-10">
-
-        <h1
-          class="font-title mt-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3 leading-tigh fade-in delay-2">
-          Developing interfaces <span class="text-secondary">that shape perspectives.</span>
-        </h1>
-
-        <p class="mt-0 max-w-md text-sm sm:text-base md:text-lg text-slate-300 mb-5 font-brand fade-in delay-3">
-          Working on building
-          <span class="text-sky-400">modern</span>, high-performance applications
-          focused on <span class="text-yellow-400">user experience</span>.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto fade-in delay-4">
-
-          <a href="#projects"
-            class="text-center px-6 py-3 bg-secondary text-primary font-brand rounded-lg font-semibold hover:-translate-y-1 transition btnBrowse transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,200,0.7)]">
-            View My Projects
-          </a>
-
-          <button class="relative overflow-hidden
-  px-6 py-3 rounded-lg
-  border border-secondary
-  text-white font-semibold
-  hover:-translate-y-1
-  transition-all duration-300
-  group  hover:shadow-[0_0_30px_rgba(0,255,200,0.7)] font-brand">
-
-            <span class="absolute inset-0 
-    bg-gradient-to-r from-cyan-400 to-emerald-400
-    scale-x-0 origin-left
-    transition-transform duration-500
-    group-hover:scale-x-100">
-            </span>
-
-            <a href="assets/img/Currículo Caleb Lira.pdf" target="_self" class="relative z-10
-    group-hover:text-slate-900
-    transition-colors duration-300">
-              Download CV
-            </a>
-
-          </button>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-<div class="fade-inn card">
-  <section id="about" class="relative pb-32 px-4 mx-auto pt-24 font-brand max-w-6xl">
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-      <!-- Lado esquerdo: texto -->
-      <div class="reveal">
-        <span class="inline-block text-xs font-semibold tracking-wider text-white px-3 py-1 mb-4">
-          ABOUT ME
-        </span>
-
-        <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
-         Turning curiosity into
-<span class="text-secondary">real front-end experience.</span>
-        </h2>
-
-        <p class="text-slate-400 text-base leading-relaxed mb-8 max-w-md">
-          My name is Caleb da Silva Lira Ribeiro. I work as a front-end developer, creating clean, pleasing digital solutions that exceed expectations, while always striving to incorporate development best practices. And I believe that every month without a solid digital presence is a month of customers going straight to the competitor who has already sorted this out.
-        </p>
-
-      </div>
-
-      <!-- Lado direito: stats -->
-      <div class="grid grid-cols-2 gap-6 reveal reveal-delay-1">
-
-        <div class="flex flex-col gap-2">
-          <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
-            <i class="bi bi-hourglass-top"></i>
-          </div>
-          <span class="text-2xl font-bold text-white">+1</span>
-          <span class="text-sm text-slate-400">Year Experience</span>
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-code"></i>
-          </div>
-          <span class="text-2xl font-bold text-white">15+</span>
-          <span class="text-sm text-slate-400">Projects Completed</span>
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-user-tie"></i>
-          </div>
-          <span class="text-2xl font-bold text-white">100%</span>
-          <span class="text-sm text-slate-400">Dedication</span>
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
-            <i class="bi bi-rocket-takeoff-fill"></i>
-          </div>
-          <span class="text-2xl font-bold text-white">∞</span>
-          <span class="text-sm text-slate-400">Willingness to Learn</span>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-</div>
-
-  <!-- techs -->
-  <div class="fade-inn card">
-    <section id="skills"
-      class="h-auto py-20 px-10 font-brand bg-gradient-to-br from-slate-900 via-blue-950 to-emerald-950 text-white">
-      <h2 class="text-3xl font-bold text-center mb-5 reveal">Technology Stack</h2>
-      <p class="text-center mb-8 font-semibold text-secondary reveal">The technologies I have affinity for to achieve better
-        performance in <br>building web applications.</p>
-
-      <div class="py-6 px-4 space-y-10">
-        <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg reveal">
-          <h2 class="text-2xl font-bold mb-4 text-center">Development</h2>
-          <button id="prevFront"
-            class="opacity-0 pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
-            <i class="bi bi-chevron-left text-xl"></i>
-          </button>
-          <div class="flex gap-6 overflow-x-auto scroll-smooth px-12" id="frontSlider">
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/html5/html5-original.svg"
-                  class="w-16 h-16 skill-icon" alt="HTML5" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">HTML5</span>
-              </div>
-            </div>
-
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/css3/css3-original.svg"
-                  class="w-16 h-16 skill-icon" alt="CSS" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">CSS</span>
-              </div>
-            </div>
-
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/javascript/javascript-original.svg"
-                  class="w-16 h-16 skill-icon" alt="JavaScript" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">JavaScript ES6+</span>
-              </div>
-            </div>
-
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/react/react-original.svg"
-                  class="w-16 h-16 skill-icon" alt="React" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">React.js</span>
-              </div>
-            </div>
-
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/php/php-original.svg"
-                  class="w-16 h-16 skill-icon" alt="PHP" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">PHP</span>
-              </div>
-            </div>
-
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/nodejs/nodejs-original.svg"
-                  class="w-16 h-16 skill-icon" alt="Node.js" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Node.js</span>
-              </div>
-            </div>
-          </div>
-          <button id="nextFront"
-            class="opacity-0 pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
-            <i class="bi bi-chevron-right text-white"></i>
-          </button>
-        </div>
-
-        <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg reveal reveal-delay-1">
-          <h2 class="text-2xl font-bold mb-4 text-center">Styling UI</h2>
-          <div class="flex justify-center gap-6 flex-wrap">
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/tailwindcss/tailwindcss-original.svg"
-                  class="w-16 h-16 skill-icon" alt="Tailwind CSS" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Tailwind CSS</span>
-              </div>
-            </div>
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/bootstrap/bootstrap-original.svg"
-                  class="w-16 h-16 skill-icon" alt="Bootstrap" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Bootstrap</span>
-              </div>
-            </div>
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/figma/figma-original.svg"
-                  class="w-16 h-16 skill-icon" alt="Figma" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Figma</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg reveal reveal-delay-2">
-          <h2 class="text-2xl font-bold mb-4 text-center">Tools</h2>
-          <button id="previousFront"
-            class="opacity-0 pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
-            <i class="bi bi-chevron-left text-xl"></i>
-          </button>
-          <div class="flex gap-6 overflow-x-auto scroll-smooth px-12" id="develoupSlider">
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/git/git-original.svg"
-                  class="w-16 h-16 skill-icon" alt="Git" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Git</span>
-              </div>
-            </div>
-
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/github/github-original.svg"
-                  class="w-16 h-16 skill-icon" alt="Github" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Github</span>
-              </div>
-            </div>
-
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/npm/npm-original-wordmark.svg"
-                  class="w-16 h-16 skill-icon" alt="NPM" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">NPM</span>
-              </div>
-            </div>
-
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/yarn/yarn-original.svg"
-                  class="w-16 h-16 skill-icon" alt="Yarn" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Yarn</span>
-              </div>
-            </div>
-
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/vite/vite-original.svg"
-                  class="w-16 h-16 skill-icon" alt="Vite" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Vite</span>
-              </div>
-            </div>
-
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <i class="fas fa-code-branch fa-3x text-blue-400"></i>
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">API</span>
-              </div>
-            </div>
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/c/c-original.svg" alt="C"
-                  class="w-16 h-16 skill-icon" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Language C</span>
-              </div>
-            </div>
-          </div>
-          <button id="nextiousFront"
-            class="opacity-0 pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
-            <i class="bi bi-chevron-right text-white"></i>
-          </button>
-        </div>
-      </div>
-  </div>
-  </section>
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-text">Caleb Lira</div>
   </div>
 
-  <!-- projects -->
-  <div class="fade-inn card">
-    <section id="projects" class="py-20 bg-primary/80 font-brand">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-12 reveal">My Projects</h2>
-        <p class="text-center mb-8 font-semibold text-secondary reveal">A range of projects I have developed in pursuit of
-          improving
-          my development skills.<br> All built with a focus on Web development and conflict resolution.</p>
-
-        <div class="projects-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-          <div class="reveal">
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="assets/img/Projeto-1.png" alt="Projeto-1" class="project-image" loading="lazy">
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2 text-white">SnapPdf</h3>
-              <p class="text-gray-400 text-sm mb-4">A document conversion system for PDF uploads all in real time and
-                fully operational. The goal is to make the process as a convenient as possible.</p>
-              <div class="flex justify-between items-center">
-                <div class="flex gap-4">
-                  <a href="https://github.com/calebsv/SnapPdf" target="_blank"
-                    class="text-secondary hover:text-green-400 transition-colors"><i class="fab fa-github text-xl"></i>
-                  </a>
-                </div>
-                <a href="https://snappdf.freedev.app/"
-                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"
-                  target="_blank"><span>Access
-                    here</span>
-                </a>
-              </div>
-            </div>
-          </article>
-          </div>
-
-          <div class="reveal reveal-delay-1">
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="assets/img/Projeto-2.png" alt="Projeto-2" class="project-image" loading="lazy">
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2 text-white">Vertex Digital</h3>
-              <p class="text-gray-400 text-sm mb-4">Welcome to Vertex Digital, a leading digital marketing company poised to boost your business. Developed with a focus on front-end practices.</p>
-              <div class="flex justify-between items-center">
-                <div class="flex gap-4">
-                  <a href="https://github.com/calebsv/Vertex-Digital" target="_blank" class="text-secondary hover:text-green-400 transition-colors"><i
-                      class="fab fa-github text-xl"></i>
-                  </a>
-                </div>
-                <a href="https://vertexdigital-mark.netlify.app/" target="_blank"
-                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"><span>Access
-                    here</span>
-                </a>
-              </div>
-            </div>
-          </article>
-          </div>
-
-          <div class="reveal reveal-delay-2">
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="assets/img/Projeto-3.png" alt="Projeto-3" class="project-image" loading="lazy">
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2 text-white">RepoFinder</h3>
-              <p class="text-gray-400 text-sm mb-4">Important application that consumes the public Github API. The project aims to consolidate knowledge in the study of APIs</p>
-              <div class="flex justify-between items-center">
-                <div class="flex gap-4">
-                  <a href="https://github.com/calebsv/RepoFinder" target="_blank" class="text-secondary hover:text-green-400 transition-colors"><i
-                      class="fab fa-github text-xl"></i>
-                  </a>
-                </div>
-                <a href="https://finderepo.netlify.app/" target="_blank"
-                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"><span>Access
-                    here</span>
-                </a>
-              </div>
-            </div>
-          </article>
-          </div>
-
-          <div class="reveal reveal-delay-1">
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="assets/img/Projeto-4.png" alt="Projeto-4" class="project-image" loading="lazy">
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2 text-white">StudyFlow</h3>
-              <p class="text-gray-400 text-sm mb-4">StudyFlow is a application designed to facilitate the organization of study materials or important notes.</p>
-              <div class="flex justify-between items-center">
-                <div class="flex gap-4">
-                  <a href="https://github.com/calebsv/StudyFlow" target="_blank" class="text-secondary hover:text-green-400 transition-colors"><i
-                      class="fab fa-github text-xl"></i>
-                  </a>
-                </div>
-                <a href="https://fluxodeestudo.vercel.app/" target="_blank"
-                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"><span>Access
-                    here</span>
-                </a>
-              </div>
-            </div>
-          </article>
-          </div>
-
-          <div class="reveal reveal-delay-2">
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="assets/img/Projeto-5.png" alt="Projeto-5" class="project-image" loading="lazy">
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2 text-white">GrandHorizon</h3>
-              <p class="text-gray-400 text-sm mb-4">Welcome to GrandHorizon, a premier hotel and inn booking system. Featuring exceptional suites and a wide range of additional services to make your experience unforgettable.</p>
-              <div class="flex justify-between items-center">
-                <div class="flex gap-4">
-                  <a href="https://github.com/calebsv/GrandHorizon" target="_blank" class="text-secondary hover:text-green-400 transition-colors"><i
-                      class="fab fa-github text-xl"></i>
-                  </a>
-                </div>
-                <a href="https://empgrandhorizon.netlify.app/" target="_blank"
-                  class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"><span>Access
-                    here</span>
-                </a>
-              </div>
-            </div>
-          </article>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="bg-primary border-t border-secondary py-10 font-brand">
-    <div class="container mx-auto px-6">
-
-      <!-- Conteúdo principal -->
-      <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-10">
-
-        <!-- Identidade -->
-        <div class="flex flex-col items-center md:items-start text-center md:text-left gap-3">
-          <div class="flex items-center gap-2 font-bold text-xl">
-            <span class="w-9 h-9 rounded-full bg-secondary flex items-center justify-center text-primary">
-              C
-            </span>
-            <span class="font-semibold text-white">Caleb Lira</span>
-          </div>
-
-          <p class="text-gray-300 max-w-xs">
-            Front-End developer creating<br />
-            interactive and professional interfaces.
-          </p>
-        </div>
-
-        <div class="flex flex-col items-center gap-3 text-center gap-3">
-          <h3 class="font-semibold text-secondary">Connect</h3>
-          <div class="flex justify-center gap-5 text-3xl text-white">
-            <a href="https://github.com/calebsv" target="_blank" class="hover:text-secondary transition-colors">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:contatocaleb2010@gmail.com" class="hover:text-secondary transition-colors">
-              <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/caleb-lira-705182249/" target="_blank"
-              class="hover:text-secondary transition-colors">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="text-center md:text-right">
-          <h3 class="text-secondary font-semibold mb-3">Links</h3>
-          <ul class="space-y-2 text-gray-400">
-            <li><a href="#home" class="hover:text-white transition">Home</a></li>
-            <li><a href="#about" class="hover:text-white transition">About</a></li>
-            <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
-            <li><a href="#skills" class="hover:text-white transition">Skills</a></li>
-          </ul>
-        </div>
-
-
-      </div>
-
-      <div class="mt-10 text-center text-gray-400 text-sm">
-        &copy; 2026 Developed by Caleb Lira. All rights reserved.
-      </div>
-
+  <main>
+    <div class="portrait">
+      <img src="sua-foto.jpg" alt="Foto de Caleb Lira">
     </div>
-  </footer>
 
-  <script src="script.js">
-  </script>
+    <div class="title-block">
+      <div class="title-row">
+        <h1>PORTFÓLIO</h1>
+        <span class="year">2026</span>
+      </div>
+      <div class="subtitle">
+        <span class="sq"></span>
+        DESENVOLVEDOR(A)
+      </div>
+
+      <nav class="menu">
+        <a class="menu-item primary" href="portfolio.html">
+          <span class="marker"></span> VER PORTFÓLIO
+        </a>
+      </nav>
+    </div>
+  </main>
 
 
 </body>
-
 </html>
