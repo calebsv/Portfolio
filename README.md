@@ -2,7 +2,7 @@
 
 Portfólio pessoal desenvolvido para apresentar minhas habilidades, projetos e experiência como desenvolvedor Front-End. O site foi construído com foco em performance, responsividade e uma experiência de usuário moderna.
 
-🔗 **Acesse o projeto:** 
+🔗 **Acesse o projeto:** <a href="https://portfolio-calebsv.netlify.app">Link do Portfolio</a>
 
 
 ## 📋 Sobre o projeto
