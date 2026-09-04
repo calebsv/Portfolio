@@ -133,3 +133,101 @@ mobileLinks.forEach(link => {
 const footerYear = document.getElementById("footer-year");
 
 footerYear.textContent = new Date().getFullYear();
+
+
+      // ---------- Hero: floating particles for the futuristic background ----------
+      (function () {
+        const container = document.getElementById('particles');
+        if (!container) return;
+        const count = 34;
+        for (let i = 0; i < count; i++) {
+          const dot = document.createElement('span');
+          dot.className = 'particle';
+          dot.style.left = Math.random() * 100 + '%';
+          dot.style.top = Math.random() * 100 + '%';
+          const size = 1 + Math.random() * 2;
+          dot.style.width = size + 'px';
+          dot.style.height = size + 'px';
+          dot.style.animationDelay = (Math.random() * 6) + 's';
+          dot.style.animationDuration = (4 + Math.random() * 4) + 's';
+          container.appendChild(dot);
+        }
+      })();
+
+    (function () {
+      const el = document.getElementById('terminal-body');
+      if (!el) return;
+
+      const seq = [
+        { type: 'cmd', text: 'Hi' },
+        { type: 'out', text: 'caleb-lira · front-end developer', cls: 'text-slate-300' },
+        { type: 'gap' },
+        { type: 'cmd', text: 'mission.txt' },
+        { type: 'out', text: 'Developing interfaces', cls: 'text-white font-semibold' },
+        { type: 'out', text: 'that shape perspectives.', cls: 'text-secondary font-semibold' },
+        { type: 'gap' },
+        { type: 'cmd', text: 'status --check' },
+        { type: 'out', text: '[ok] building modern, high-performance apps', cls: 'text-sky-400' },
+        { type: 'out', text: '[ok] focused on user experience', cls: 'text-yellow-400' },
+      ];
+
+      let i = 0;
+
+      function finish() {
+        const cur = document.createElement('span');
+        cur.className = 'terminal-cursor';
+        el.appendChild(cur);
+      }
+
+      function next() {
+        if (i >= seq.length) {
+          finish();
+          return;
+        }
+        const item = seq[i++];
+
+        if (item.type === 'gap') {
+          const gap = document.createElement('div');
+          gap.className = 'h-3';
+          el.appendChild(gap);
+          next();
+          return;
+        }
+
+        const line = document.createElement('div');
+        line.className = 'flex gap-2';
+
+        if (item.type === 'cmd') {
+          const prompt = document.createElement('span');
+          prompt.className = 'text-secondary shrink-0';
+          prompt.textContent = '$';
+          line.appendChild(prompt);
+        }
+
+        const span = document.createElement('span');
+        span.className = item.cls || 'text-slate-200';
+        line.appendChild(span);
+        el.appendChild(line);
+
+        let c = 0;
+        const speed = item.type === 'cmd' ? 55 : 18;
+        const timer = setInterval(() => {
+          span.textContent += item.text[c];
+          c++;
+          if (c >= item.text.length) {
+            clearInterval(timer);
+            setTimeout(next, item.type === 'cmd' ? 250 : 350);
+          }
+        }, speed);
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            next();
+            io.disconnect();
+          }
+        });
+      });
+      io.observe(el);
+    })();

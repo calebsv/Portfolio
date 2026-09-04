@@ -500,3 +500,100 @@ nav#navbar #menuBtn {
     transform: none !important;
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 4px;
+}
+
+#home .hero-grid {
+  background-image:
+    linear-gradient(rgba(16, 185, 129, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.16) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 60% at 50% 20%,
+    black 10%,
+    transparent 75%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 60% at 50% 20%,
+    black 10%,
+    transparent 75%
+  );
+  animation: gridDrift 22s linear infinite;
+}
+
+@keyframes gridDrift {
+  0% {
+    background-position:
+      0 0,
+      0 0;
+  }
+
+  100% {
+    background-position:
+      46px 46px,
+      46px 46px;
+  }
+}
+
+
+@keyframes scan {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 400px;
+  }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.8);
+  box-shadow: 0 0 6px 1px rgba(16, 185, 129, 0.55);
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translateY(-10px);
+  }
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: #10b981;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+#terminal-body div {
+  min-height: 1.4em;
+}
