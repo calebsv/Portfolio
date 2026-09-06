@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Caleb Lira — Portfólio</title>
+<title>Caleb Lira | Portfólio</title>
 <link rel="icon" type="image/png" href="assets/img/favicon.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -26,7 +26,8 @@
 
   *{ margin:0; padding:0; box-sizing:border-box; }
 
-  html,body{ height:100%; }
+  html,body{ height:100%; 
+  scroll-behavior: smooth;}
 
   body{
     background:
@@ -53,6 +54,120 @@
     );
     pointer-events:none;
     z-index:1;
+  }
+
+  #preloader{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    background:linear-gradient(160deg, var(--bg-1), var(--bg-2) 70%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:34px;
+    transition:opacity .6s ease, visibility .6s ease;
+  }
+
+  #preloader.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+  }
+
+  #preloader::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:repeating-linear-gradient(
+      to bottom,
+      rgba(16,185,129,0.025) 0px,
+      rgba(16,185,129,0.025) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events:none;
+  }
+
+  .hud-frame{
+    position:relative;
+    padding:26px 30px;
+  }
+
+  .hud-corner{
+    position:absolute;
+    width:16px;
+    height:16px;
+    border:2px solid var(--secondary);
+  }
+  .hud-corner.tl{ top:0; left:0; border-right:none; border-bottom:none; }
+  .hud-corner.tr{ top:0; right:0; border-left:none; border-bottom:none; }
+  .hud-corner.bl{ bottom:0; left:0; border-right:none; border-top:none; }
+  .hud-corner.br{ bottom:0; right:0; border-left:none; border-top:none; }
+
+  .block-row{
+    display:flex;
+    gap:4px;
+  }
+
+  .block-row .block{
+    width:9px;
+    height:22px;
+    background:rgba(237,237,242,0.06);
+    border:1px solid var(--line);
+    transition:background .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+
+  .block-row .block.active{
+    background:var(--secondary);
+    border-color:var(--secondary);
+    box-shadow:0 0 10px rgba(16,185,129,0.65), 0 0 2px rgba(16,185,129,0.9);
+  }
+
+  .loader-readout{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:500;
+    font-size:clamp(2rem, 5vw, 2.8rem);
+    color:var(--text);
+    font-variant-numeric:tabular-nums;
+    letter-spacing:0.06em;
+    text-align:center;
+  }
+
+  .loader-readout .bracket{
+    color:var(--muted);
+  }
+
+  #loader-number{
+    color:var(--secondary);
+    text-shadow:0 0 12px rgba(16,185,129,0.5);
+  }
+
+  .loader-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .loader-label .sq{
+    width:8px;
+    height:8px;
+    background:var(--secondary);
+    animation:blink 1s steps(2) infinite;
+  }
+
+  @keyframes blink{
+    50%{ opacity:0.2; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    #preloader{ transition:none; }
+    .loader-label .sq{ animation:none; }
+    .block-row .block{ transition:none; }
   }
 
   main{
@@ -88,10 +203,13 @@
     justify-content:center;
     overflow:hidden;
     opacity:0;
-    animation:fadeInLeft .8s ease-out forwards;
-    animation-delay:0.1s;
     border:var(--secondary) 5px solid;
     border-radius:4px;
+  }
+
+  body.loaded .portrait{
+    animation:fadeInLeft .8s ease-out forwards;
+    animation-delay:0.1s;
   }
   .portrait img{
     width:100%;
@@ -112,6 +230,9 @@
     flex:1 1 420px;
     max-width:560px;
     opacity:0;
+  }
+
+  body.loaded .title-block{
     animation:fadeInUp .8s ease-out forwards;
     animation-delay:0.5s;
   }
@@ -159,6 +280,9 @@
     flex-direction:column;
     gap:4px;
     opacity:0;
+  }
+
+  body.loaded .menu{
     animation:fadeInUp .8s ease-out forwards;
     animation-delay:0.9s;
   }
@@ -204,7 +328,10 @@
     *{ transition:none !important; }
     .portrait,
     .title-block,
-    .menu{
+    .menu,
+    body.loaded .portrait,
+    body.loaded .title-block,
+    body.loaded .menu{
       animation:none !important;
       opacity:1 !important;
       transform:none !important;
@@ -221,6 +348,25 @@
 </head>
 <body>
 
+  <div id="preloader">
+    <div class="hud-frame">
+      <div class="hud-corner tl"></div>
+      <div class="hud-corner tr"></div>
+      <div class="hud-corner bl"></div>
+      <div class="hud-corner br"></div>
+      <div class="block-row" id="block-row"></div>
+    </div>
+
+    <div class="loader-readout">
+      <span class="bracket">[</span><span id="loader-number">000</span><span class="bracket">]</span>
+    </div>
+
+    <div class="loader-label">
+      <span class="sq"></span>
+      CARREGANDO
+    </div>
+  </div>
+
   <main>
     <div class="portrait">
       <img src="assets/img/perfil-home.jpg" alt="Foto de Caleb Lira">
@@ -233,7 +379,7 @@
       </div>
       <div class="subtitle">
         <span class="sq"></span>
-        DESENVOLVEDOR WEB
+        DESENVOLVEDOR FRONT-END
       </div>
 
       <nav class="menu">
@@ -244,6 +390,69 @@
     </div>
   </main>
 
+  <script>
+    (function () {
+      const preloader   = document.getElementById('preloader');
+      const blockRow     = document.getElementById('block-row');
+      const numberEl     = document.getElementById('loader-number');
+
+      const DURATION     = 2600;  // 
+      const TOTAL_BLOCKS  = 24;   
+
+      const blocks = [];
+      for (let i = 0; i < TOTAL_BLOCKS; i++) {
+        const b = document.createElement('div');
+        b.className = 'block';
+        blockRow.appendChild(b);
+        blocks.push(b);
+      }
+
+      let start = null;
+      let lastActiveCount = 0;
+
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        const elapsed = timestamp - start;
+
+        const progress = Math.min(elapsed / DURATION, 1);
+        const eased = 1 - Math.pow(1 - progress, 2);
+        const percent = Math.round(eased * 100);
+
+        numberEl.textContent = String(percent).padStart(3, '0');
+
+        const activeCount = Math.round((percent / 100) * TOTAL_BLOCKS);
+        if (activeCount !== lastActiveCount) {
+          for (let i = 0; i < TOTAL_BLOCKS; i++) {
+            blocks[i].classList.toggle('active', i < activeCount);
+          }
+          lastActiveCount = activeCount;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          finish();
+        }
+      }
+
+      function finish() {
+        setTimeout(() => {
+          preloader.classList.add('hide');
+          document.body.classList.add('loaded');
+        }, 300);
+      }
+
+      window.addEventListener('load', () => {
+        requestAnimationFrame(step);
+      });
+
+      setTimeout(() => {
+        if (!preloader.classList.contains('hide')) {
+          finish();
+        }
+      }, DURATION + 5000);
+    })();
+  </script>
 
 </body>
 </html>
