@@ -134,3 +134,6 @@ const footerYear = document.getElementById("footer-year");
 
 footerYear.textContent = new Date().getFullYear();
 
+ window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });

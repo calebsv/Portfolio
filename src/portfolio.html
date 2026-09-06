@@ -40,57 +40,6 @@
       }
     }
   </script>
-  <style>
-
-    #home .hero-grid {
-      background-image:
-        linear-gradient(rgba(16, 185, 129, 0.16) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(16, 185, 129, 0.16) 1px, transparent 1px);
-      background-size: 46px 46px;
-      -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 20%, black 10%, transparent 75%);
-      mask-image: radial-gradient(ellipse 75% 60% at 50% 20%, black 10%, transparent 75%);
-      animation: gridDrift 22s linear infinite;
-    }
-
-    @keyframes gridDrift {
-      0% { background-position: 0 0, 0 0; }
-      100% { background-position: 46px 46px, 46px 46px; }
-    }
-
-
-    .particle {
-      position: absolute;
-      border-radius: 9999px;
-      background: rgba(16, 185, 129, 0.8);
-      box-shadow: 0 0 6px 1px rgba(16, 185, 129, 0.55);
-      animation-name: twinkle;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.12; transform: translateY(0); }
-      50% { opacity: 0.9; transform: translateY(-10px); }
-    }
-
-    .terminal-cursor {
-      display: inline-block;
-      width: 8px;
-      height: 1em;
-      background: #10b981;
-      margin-left: 2px;
-      vertical-align: text-bottom;
-      animation: blink 1s steps(1) infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-
-    #terminal-body div {
-      min-height: 1.4em;
-    }
-  </style>
 </head>
 
 <body class="font-sans bg-night text-gray-200 overflow-x-hidden">
@@ -99,18 +48,13 @@
     class="relative overflow-hidden min-h-screen flex items-start justify-center px-4 pt-20 sm:px-6"
     id="home">
 
-    <!-- Futuristic background layers -->
-    <div class="absolute inset-0 -z-10"
-      style="background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(16,185,129,0.22), transparent), radial-gradient(ellipse 55% 40% at 92% 8%, rgba(56,189,248,0.16), transparent), radial-gradient(ellipse 60% 45% at 5% 90%, rgba(16,185,129,0.10), transparent);">
-    </div>
     <div class="absolute inset-0 -z-10 hero-grid"></div>
-    <div class="absolute inset-0 -z-10 hero-scanline"></div>
     <div class="absolute inset-0 -z-10 pointer-events-none overflow-hidden" id="particles"></div>
 
     <nav id="navbar"
-      class="fixed top-0 left-0 w-full bg-transparent transition-all duration-300 ease-out backdrop-blur z-50 border-b border-secondary">
+      class="fixed top-0 left-0 w-full bg-transparent transition-all duration-300 ease-out z-50">
       <div class="px-6 py-4 max-w-7xl mx-auto flex items-center justify-between">
-        <div class="nav-logo flex items-center gap-2 font-bold text-xl">
+        <div class="nav-logo flex items-center gap-2 font-bold text-xl select-none">
           <a href="index.html" target="_self" aria-label="Voltar para a página anterior" class="group w-9 h-9 flex items-center justify-center 
            rounded-full border border-secondary/50 
            text-white hover:text-slate-900 
@@ -130,7 +74,7 @@
             Caleb Lira</span>
         </div>
 
-        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 flex items-center gap-10 font-brand text-lg">
+        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 flex items-center gap-10 font-brand text-lg select-none">
           <a href="#home" class="nav-link hover:text-secondary transition-colors">Home</a>
           <a href="#about" class="nav-link hover:text-secondary transition-colors">About</a>
           <a href="#skills" class="nav-link hover:text-secondary transition-colors">Skills</a>
@@ -149,7 +93,7 @@
 
     <div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-slate-900/95 backdrop-blur-lg border-l border-secondary z-40
          flex flex-col items-center justify-center gap-8 font-brand text-xl
-         translate-x-full transition-transform duration-300 ease-in-out">
+         translate-x-full transition-transform duration-300 ease-in-out select-none">
       <a href="#home" class="mobile-link hover:text-secondary transition-colors">Home</a>
       <a href="#about" class="mobile-link hover:text-secondary transition-colors">About</a>
       <a href="#skills" class="mobile-link hover:text-secondary transition-colors">Skills</a>
@@ -164,7 +108,7 @@
     <div
       class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center text-center md:text-left mt-10 ">
 
-      <div class="flex flex-col items-center md:items-start md:ml-10">
+      <div class="flex flex-col items-center md:items-start md:ml-10 select-none">
         <div class="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-60 lg:h-60">
           <div
             class="absolute inset-0 rounded-full bg-gradient-to-r from-sky-400 via-blue-500 to-cyan-400 blur-3xl opacity-40 animate-pulse">
@@ -183,7 +127,7 @@
         </h2>
       </div>
 
-      <div class="flex flex-col items-center md:items-start md:ml-10 w-full">
+      <div class="flex flex-col items-center md:items-start md:ml-10 w-full select-none">
 
         <div
           class="w-full max-w-xl rounded-xl border border-secondary/40 bg-slate-950/70 backdrop-blur-md shadow-[0_0_40px_rgba(16,185,129,0.15)] overflow-hidden fade-in delay-2">
@@ -247,7 +191,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-        <div class="reveal">
+        <div class="reveal select-none">
           <span class="inline-block text-xs font-semibold tracking-wider text-white px-3 py-1 mb-4">
             ABOUT ME
           </span>
@@ -266,7 +210,7 @@
 
         </div>
 
-        <div class="grid grid-cols-2 gap-6 reveal reveal-delay-1">
+        <div class="grid grid-cols-2 gap-6 reveal reveal-delay-1 select-none">
 
           <div class="flex flex-col gap-2">
             <div
@@ -312,7 +256,7 @@
 
   <div class="fade-inn card">
     <section id="skills"
-      class="h-auto py-20 px-10 font-brand bg-gradient-to-br from-slate-900 via-blue-950 to-emerald-950 text-white">
+      class="h-auto py-20 px-10 font-brand bg-gradient-to-br from-slate-900 via-blue-950 to-emerald-950 text-white select-none">
       <h2 class="text-3xl font-bold text-center mb-5 reveal">Technology Stack</h2>
       <p class="text-center mb-8 font-semibold text-secondary reveal">The technologies I have affinity for to achieve
         better
@@ -528,7 +472,7 @@
   </div>
 
   <div class="fade-inn card">
-    <section id="projects" class="py-20 bg-primary/80 font-brand">
+    <section id="projects" class="py-20 bg-primary/80 font-brand select-none">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-12 reveal">My Projects</h2>
         <p class="text-center mb-8 font-semibold text-secondary reveal">A range of projects I have developed in pursuit
@@ -538,7 +482,7 @@
 
         <div class="projects-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-          <div class="reveal">
+          <div class="reveal select-none">
             <article class="project-card">
               <div class="project-image-container">
                 <img src="assets/img/Projeto-1.png" alt="Projeto-1" class="project-image" loading="lazy">
@@ -699,7 +643,7 @@
     </section>
   </div>
 
-  <footer class="bg-primary border-t border-secondary py-10 font-brand">
+  <footer class="bg-primary border-t border-secondary py-10 font-brand select-none">
     <div class="container mx-auto px-6">
 
       <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-10">
@@ -754,7 +698,6 @@
   </script>
 
   <script>
-    // ---------- Hero: floating particles for the futuristic background ----------
     (function () {
       const container = document.getElementById('particles');
       if (!container) return;
@@ -773,7 +716,6 @@
       }
     })();
 
-    // ---------- Hero: animated terminal typing the copy ----------
     (function () {
       const el = document.getElementById('terminal-body');
       if (!el) return;
@@ -782,7 +724,7 @@
         { type: 'cmd', text: 'whoami' },
         { type: 'out', text: 'caleb-lira · front-end developer', cls: 'text-slate-300' },
         { type: 'gap' },
-        { type: 'cmd', text: 'cat mission.txt' },
+        { type: 'cmd', text: 'mission.txt' },
         { type: 'out', text: 'Developing interfaces', cls: 'text-white font-semibold' },
         { type: 'out', text: 'that shape perspectives.', cls: 'text-secondary font-semibold' },
         { type: 'gap' },

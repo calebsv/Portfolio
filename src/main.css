@@ -194,9 +194,9 @@ body {
   background-size: 40px 40px;
 }
 nav.scrolled {
-  background: rgba(14, 14, 16, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--bg-secondary);
+  background: rgba(18, 18, 43, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 2px solid var(--secondary);
 }
 
 @keyframes fadeInUp {
