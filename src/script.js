@@ -336,7 +336,7 @@ window.addEventListener('scroll', () => {
         ]
     };
 
-    let runToken = 0; // lets us cancel an in-flight animation when the language changes
+    let runToken = 0; 
 
     function finish(el) {
         const cur = document.createElement('span');
@@ -351,7 +351,7 @@ window.addEventListener('scroll', () => {
         let i = 0;
 
         function next() {
-            if (myToken !== runToken) return; // a newer run started, stop this one
+            if (myToken !== runToken) return; 
             if (i >= seq.length) {
                 finish(el);
                 return;
@@ -415,9 +415,6 @@ window.addEventListener('scroll', () => {
     io.observe(el);
 })();
 
-/* =========================================================
-   i18n ENGINE — EN <-> PT toggle button (top-right of navbar)
-========================================================= */
 (function () {
     const translations = {
         en: {
