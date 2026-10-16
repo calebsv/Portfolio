@@ -638,3 +638,11 @@ nav#navbar #menuBtn {
   color: #10b981;
   font-weight: 700;
 }
+
+/* ===== Hero: texto circular ===== */
+.orbit-text-content {
+  font-size: 15px;
+  font-weight: 600;
+  fill: #10b981;
+  text-transform: uppercase;
+}

@@ -456,6 +456,8 @@ window.addEventListener('scroll', () => {
             footer_connect: 'Connect',
             footer_links: 'Links',
             footer_copyright: 'Developed by Caleb Lira. All rights reserved.',
+            // dentro de translations.en
+hero_circle: 'DEVELOPING INTERFACES THAT SHAPE PERSPECTIVES • FRONT-END DEVELOPER • ',
         },
         pt: {
             nav_home: 'Início',
@@ -496,6 +498,8 @@ window.addEventListener('scroll', () => {
             footer_connect: 'Conecte-se',
             footer_links: 'Links',
             footer_copyright: 'Desenvolvido por Caleb Lira. Todos os direitos reservados.',
+            hero_circle: 'DESENVOLVENDO INTERFACES QUE MOLDAM PERSPECTIVAS • DEV FRONT-END • ',
+
         }
     };
 
