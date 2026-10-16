@@ -128,18 +128,27 @@
     <!-- brilho atrás -->
     <div class="absolute inset-[12%] rounded-full bg-gradient-to-r from-sky-400 via-blue-500 to-cyan-400 blur-3xl opacity-30 animate-pulse"></div>
 
-    <!-- texto girando -->
-    <svg viewBox="0 0 400 400" class="orbit-text absolute inset-0 w-full h-full" aria-hidden="true">
-      <defs>
-        <path id="heroCirclePath"
-          d="M 200,200 m -170,0 a 170,170 0 1,1 340,0 a 170,170 0 1,1 -340,0" />
-      </defs>
-      <text class="orbit-text-content font-brand">
-        <textPath href="#heroCirclePath" startOffset="0"
-          textLength="1060" lengthAdjust="spacing"
-          data-i18n="hero_circle">DEVELOPING INTERFACES THAT SHAPE PERSPECTIVES • FRONT-END DEVELOPER • </textPath>
-      </text>
-    </svg>
+   <!-- texto circular (parado) -->
+<svg viewBox="0 0 400 400" class="absolute inset-0 w-full h-full" aria-hidden="true">
+  <defs>
+    <!-- arco de cima: esquerda -> direita passando pelo topo -->
+    <path id="heroArcTop" d="M 30,200 A 170,170 0 0,1 370,200" />
+    <!-- arco de baixo: esquerda -> direita passando pela base (texto fica em pé) -->
+    <path id="heroArcBottom" d="M 19,200 A 181,181 0 0,0 381,200" />
+  </defs>
+
+  <text class="orbit-text-content font-brand">
+    <textPath href="#heroArcTop" startOffset="12"
+      textLength="510" lengthAdjust="spacing"
+      data-i18n="hero_circle_top">DEVELOPING INTERFACES THAT SHAPE PERSPECTIVES</textPath>
+  </text>
+
+  <text class="orbit-text-content font-brand">
+    <textPath href="#heroArcBottom" startOffset="140"
+      textLength="290" lengthAdjust="spacing"
+      data-i18n="hero_circle_bottom">FRONT-END DEVELOPER</textPath>
+  </text>
+</svg>
 
     <div class="absolute inset-[15%] rounded-full bg-gradient-to-br from-slate-200 to-slate-400 shadow-lg">
       <img src="assets/img/perfil.jpeg" alt="Caleb Lira"
@@ -148,7 +157,6 @@
 
   </div>
 
-  <p class="fade-in delay-1 font-mono text-2xl text-secondary leading-none tracking-wide uppercase border-2 border-secondary p-2">Desenvolvendo Interfaces Que moldam Perspectivas</p>
   <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-8 fade-in delay-2">
 
     <a href="#projects" data-i18n="btn_view_projects"

@@ -336,7 +336,7 @@ window.addEventListener('scroll', () => {
         ]
     };
 
-    let runToken = 0; 
+    let runToken = 0;
 
     function finish(el) {
         const cur = document.createElement('span');
@@ -351,7 +351,7 @@ window.addEventListener('scroll', () => {
         let i = 0;
 
         function next() {
-            if (myToken !== runToken) return; 
+            if (myToken !== runToken) return;
             if (i >= seq.length) {
                 finish(el);
                 return;
@@ -456,8 +456,9 @@ window.addEventListener('scroll', () => {
             footer_connect: 'Connect',
             footer_links: 'Links',
             footer_copyright: 'Developed by Caleb Lira. All rights reserved.',
-            // dentro de translations.en
-hero_circle: 'DEVELOPING INTERFACES THAT SHAPE PERSPECTIVES • FRONT-END DEVELOPER • ',
+            hero_circle_top: 'DEVELOPING INTERFACES THAT SHAPE PERSPECTIVES',
+            hero_circle_bottom: 'FRONT-END DEVELOPER',
+
         },
         pt: {
             nav_home: 'Início',
@@ -498,8 +499,8 @@ hero_circle: 'DEVELOPING INTERFACES THAT SHAPE PERSPECTIVES • FRONT-END DEVELO
             footer_connect: 'Conecte-se',
             footer_links: 'Links',
             footer_copyright: 'Desenvolvido por Caleb Lira. Todos os direitos reservados.',
-            hero_circle: 'DESENVOLVENDO INTERFACES QUE MOLDAM PERSPECTIVAS • DEV FRONT-END • ',
-
+            hero_circle_top: 'DESENVOLVENDO INTERFACES QUE MOLDAM PERSPECTIVAS',
+            hero_circle_bottom: 'DESENVOLVEDOR FRONT-END',
         }
     };
 
