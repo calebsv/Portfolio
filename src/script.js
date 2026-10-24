@@ -456,9 +456,8 @@ window.addEventListener('scroll', () => {
             footer_connect: 'Connect',
             footer_links: 'Links',
             footer_copyright: 'Developed by Caleb Lira. All rights reserved.',
-            hero_circle_top: 'DEVELOPING INTERFACES THAT SHAPE PERSPECTIVES',
-            hero_circle_bottom: 'FRONT-END DEVELOPER',
-
+            hero_label: '<b>Front-end</b> <i>developer</i>',
+            hero_hint: 'Scroll to see more informations',
         },
         pt: {
             nav_home: 'Início',
@@ -469,7 +468,7 @@ window.addEventListener('scroll', () => {
             aria_back: 'Voltar para a página anterior',
             aria_menu: 'Abrir menu',
             btn_view_projects: 'Ver Meus Projetos',
-            btn_download_cv: 'Baixar Currículo',
+            btn_cta_wpp: 'Entrar em contato',
             about_badge: 'SOBRE MIM',
             about_heading1: 'Transformando curiosidade em',
             about_heading2: 'experiência real em front-end.',
@@ -499,8 +498,8 @@ window.addEventListener('scroll', () => {
             footer_connect: 'Conecte-se',
             footer_links: 'Links',
             footer_copyright: 'Desenvolvido por Caleb Lira. Todos os direitos reservados.',
-            hero_circle_top: 'DESENVOLVENDO INTERFACES QUE MOLDAM PERSPECTIVAS',
-            hero_circle_bottom: 'DESENVOLVEDOR FRONT-END',
+            hero_label: '<b>Desenvolvedor</b> <i>front-end</i>',
+            hero_hint: 'Role para ver mais informações',
         }
     };
 

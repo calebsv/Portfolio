@@ -43,58 +43,57 @@
 </head>
 
 <!--PORTFOLIO BY CALEBÃO-->
+
 <body class="font-sans bg-night text-gray-200 overflow-x-hidden">
- 
-  <section
-    class="relative overflow-hidden min-h-screen flex items-start justify-center px-4 pt-20 sm:px-6"
+
+  <section class="relative overflow-hidden min-h-screen flex items-center justify-center px-4 pt-24 pb-24 sm:px-6"
     id="home">
- 
-    <div class="absolute inset-0 -z-10 hero-grid"></div>
-    <div class="absolute inset-0 -z-10 pointer-events-none overflow-hidden" id="particles"></div>
- 
-    <nav id="navbar"
-      class="fixed top-0 left-0 w-full bg-transparent transition-all duration-300 ease-out z-50">
+
+    <div class="absolute inset-0 -z-10 pointer-events-none hero-bg"></div>
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent transition-all duration-300 ease-out z-50">
       <div class="px-6 py-4 max-w-7xl mx-auto flex items-center justify-between">
         <div class="nav-logo flex items-center gap-2 font-bold text-xl select-none">
-          <a href="index.html" target="_self" data-i18n-aria="aria_back"
-            aria-label="Go back to previous page" class="group w-9 h-9 flex items-center justify-center 
+          <a href="index.html" target="_self" data-i18n-aria="aria_back" aria-label="Go back to previous page" class="group w-9 h-9 flex items-center justify-center 
            rounded-full border border-secondary/50 
            text-white hover:text-slate-900 
            hover:bg-secondary 
            hover:-translate-x-1 
            transition-all duration-300
            hover:shadow-[0_0_20px_rgba(0,255,200,0.5)]">
- 
+
             <i class="bi bi-arrow-left text-lg"></i>
- 
-        </a>
-          <div class="w-9 h-9 flex items-center justify-center rounded-full bg-transparent border border-secondary text-primary font-bold"><img
-              src="assets/img/favicon.png" alt="Logo"
+
+          </a>
+          <div
+            class="w-9 h-9 flex items-center justify-center rounded-full bg-transparent border border-secondary text-primary font-bold">
+            <img src="assets/img/favicon.png" alt="Logo"
               class="rounded-full hover:scale-110 transition-transform duration-300"></div>
           <span
             class="font-brand font-semibold hover:text-secondary transition-transform duration-300 transition-colors">
             Caleb Lira</span>
         </div>
- 
-        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 flex items-center gap-10 font-brand text-lg select-none">
+
+        <div
+          class="hidden md:flex absolute left-1/2 -translate-x-1/2 flex items-center gap-10 font-brand text-lg select-none">
           <a href="#home" data-i18n="nav_home" class="nav-link hover:text-secondary transition-colors">Home</a>
           <a href="#about" data-i18n="nav_about" class="nav-link hover:text-secondary transition-colors">About</a>
           <a href="#skills" data-i18n="nav_skills" class="nav-link hover:text-secondary transition-colors">Skills</a>
-          <a href="#projects" data-i18n="nav_projects" class="nav-link hover:text-secondary transition-colors">Projects</a>
-          <a href="#services" data-i18n="nav_services" class="nav-link hover:text-secondary transition-colors">Services</a>
+          <a href="#projects" data-i18n="nav_projects"
+            class="nav-link hover:text-secondary transition-colors">Projects</a>
+          <a href="#services" data-i18n="nav_services"
+            class="nav-link hover:text-secondary transition-colors">Services</a>
         </div>
- 
+
         <div class="flex items-center gap-3">
-          <button id="langToggle" type="button"
-            aria-label="Switch to Portuguese"
-            class="flex items-center justify-center px-3 py-1.5 rounded-full border border-secondary/60
+          <button id="langToggle" type="button" aria-label="Switch to Portuguese" class="flex items-center justify-center px-3 py-1.5 rounded-full border border-secondary/60
                    text-xs sm:text-sm font-brand font-semibold text-white
                    hover:bg-secondary hover:text-slate-900
                    hover:shadow-[0_0_20px_rgba(0,255,200,0.5)]
                    transition-all duration-300 select-none">
             PT
           </button>
- 
+
           <button id="menuBtn" class="md:hidden relative w-8 h-6 flex flex-col justify-between z-50"
             data-i18n-aria="aria_menu" aria-label="Open menu">
             <span class="hamburger-line block h-0.5 w-full bg-white rounded"></span>
@@ -102,104 +101,124 @@
             <span class="hamburger-line block h-0.5 w-full bg-white rounded"></span>
           </button>
         </div>
- 
+
       </div>
     </nav>
- 
+
     <div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-slate-900/95 backdrop-blur-lg border-l border-secondary z-40
          flex flex-col items-center justify-center gap-8 font-brand text-xl
          translate-x-full transition-transform duration-300 ease-in-out select-none">
       <a href="#home" data-i18n="nav_home" class="mobile-link hover:text-secondary transition-colors">Home</a>
       <a href="#about" data-i18n="nav_about" class="mobile-link hover:text-secondary transition-colors">About</a>
       <a href="#skills" data-i18n="nav_skills" class="mobile-link hover:text-secondary transition-colors">Skills</a>
-      <a href="#projects" data-i18n="nav_projects" class="mobile-link hover:text-secondary transition-colors">Projects</a>
-      <a href="#services" data-i18n="nav_services" class="mobile-link hover:text-secondary transition-colors">Services</a>
+      <a href="#projects" data-i18n="nav_projects"
+        class="mobile-link hover:text-secondary transition-colors">Projects</a>
+      <a href="#services" data-i18n="nav_services"
+        class="mobile-link hover:text-secondary transition-colors">Services</a>
     </div>
- 
+
     <div id="menuOverlay"
       class="fixed inset-0 bg-black/60 z-30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
     <div id="glow" class="pointer-events-none fixed w-32 h-32 sm:w-40 sm:h-40 bg-cyan-500/30 rounded-full blur-3xl">
     </div>
-    <div class="w-full max-w-3xl flex flex-col items-center text-center select-none">
 
-  <div class="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[26rem] md:h-[26rem] fade-in">
+    <!-- conteúdo da hero -->
+    <div class="w-full flex flex-col items-center select-none">
 
-    <div class="absolute inset-[12%] rounded-full bg-gradient-to-r from-sky-400 via-blue-500 to-cyan-400 blur-3xl opacity-30 animate-pulse"></div>
+      <div class="hx-box">
+        <span class="hx-h" data-p="tl"></span>
+        <span class="hx-h" data-p="tm"></span>
+        <span class="hx-h" data-p="tr"></span>
+        <span class="hx-h" data-p="ml"></span>
+        <span class="hx-h" data-p="mr"></span>
+        <span class="hx-h" data-p="bl"></span>
+        <span class="hx-h" data-p="bm"></span>
+        <span class="hx-h hx-h--lg" data-p="br"></span>
 
-<svg viewBox="0 0 400 400" class="absolute inset-0 w-full h-full" aria-hidden="true">
-  <defs>
-    <path id="heroArcTop" d="M 30,200 A 170,170 0 0,1 370,200" />
-    <path id="heroArcBottom" d="M 19,200 A 181,181 0 0,0 381,200" />
-  </defs>
+        <div class="hx-cursor" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26">
+            <path d="M3 2l17 8-7.5 2.2L10 20z" fill="currentColor" />
+          </svg>
+          <span>Caleb</span>
+        </div>
 
-  <text class="orbit-text-content font-brand">
-    <textPath href="#heroArcTop" startOffset="12"
-      textLength="510" lengthAdjust="spacing"
-      data-i18n="hero_circle_top">DEVELOPING INTERFACES THAT SHAPE PERSPECTIVES</textPath>
-  </text>
+        <p class="hx-label" data-i18n-html="hero_label"><b>Front-end</b> <i>developer</i></p>
 
-  <text class="orbit-text-content font-brand">
-    <textPath href="#heroArcBottom" startOffset="140"
-      textLength="290" lengthAdjust="spacing"
-      data-i18n="hero_circle_bottom">FRONT-END DEVELOPER</textPath>
-  </text>
-</svg>
+        <h1 class="hx-title" aria-label="Portfolio">
+          <span aria-hidden="true"><span class="hx-mask"><span class="hx-ch" style="--i:0">P</span></span><!--
+  --><span class="hx-mask"><span class="hx-ch" style="--i:1">o</span></span><!--
+  --><span class="hx-mask"><span class="hx-ch" style="--i:2">r</span></span><!--
+  --><span class="hx-mask"><span class="hx-ch" style="--i:3">t</span></span><!--
+  --><span class="hx-mask"><span class="hx-ch" style="--i:4">f</span></span><!--
+  --><span class="hx-orb"><img src="assets/img/perfil.jpeg" alt=""></span><!--
+  --><span class="hx-mask"><span class="hx-ch" style="--i:6">l</span></span><!--
+  --><span class="hx-mask"><span class="hx-ch" style="--i:7">i</span></span><!--
+  --><span class="hx-mask"><span class="hx-ch" style="--i:8">o</span></span></span>
+        </h1>
 
-    <div class="absolute inset-[15%] rounded-full bg-gradient-to-br from-slate-200 to-slate-400 shadow-lg">
-      <img src="assets/img/perfil.jpeg" alt="Caleb Lira"
-        class="w-full h-full rounded-full object-cover border border-secondary/40 shadow-[0_0_40px_rgba(16,185,129,0.25)] hover:scale-105 transition duration-300">
+        <div class="hx-meta">
+          <span class="hx-meta-btn"><i class="bi bi-arrow-down-left"></i></span>
+          <span class="hx-year">2026</span>
+        </div>
+
+        <span class="hx-glass" aria-hidden="true"></span>
+      </div>
+
+      <p class="hx-hint">
+        <i class="bi bi-arrow-down-right"></i>
+        <span data-i18n="hero_hint">Scroll to see more informations</span>
+        <i class="bi bi-arrow-down-left"></i>
+      </p>
+
+      <div class="hx-cta flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-6">
+        <a href="#projects" data-i18n="btn_view_projects"
+          class="text-center px-6 py-3 bg-secondary text-primary font-brand rounded-lg font-semibold hover:-translate-y-1 transition btnBrowse transition-all duration-300 hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]">
+          View My Projects
+        </a>
+        <a href="https://wa.me/5585998487745" target="_blank" class="group relative overflow-hidden text-center px-6 py-3 rounded-lg border border-secondary
+         text-white font-brand font-semibold hover:-translate-y-1 transition-all duration-300
+         hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]">
+          <span class="absolute inset-0 bg-gradient-to-r from-emerald-400 to-secondary scale-x-0 origin-left
+               transition-transform duration-500 group-hover:scale-x-100"></span>
+          <span data-i18n="btn_cta_wpp"
+            class="relative z-10 group-hover:text-slate-900 transition-colors duration-300">Entrar em contato</span>
+        </a>
+      </div>
     </div>
 
-  </div>
+    <div class="hx-rail" aria-hidden="true">
+      <span>front-end</span><i></i><span>2026</span>
+    </div>
 
-  <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-8 fade-in delay-2">
-
-    <a href="#projects" data-i18n="btn_view_projects"
-      class="text-center px-6 py-3 bg-secondary text-primary font-brand rounded-lg font-semibold hover:-translate-y-1 transition btnBrowse transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,200,0.7)]">
-      View My Projects
-    </a>
-
-    <a href="assets/img/Curriculo_CalebLira.pdf" target="_blank"
-      class="group relative overflow-hidden text-center px-6 py-3 rounded-lg border border-secondary
-             text-white font-brand font-semibold hover:-translate-y-1 transition-all duration-300
-             hover:shadow-[0_0_30px_rgba(0,255,200,0.7)]">
-      <span class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-emerald-400 scale-x-0 origin-left
-                   transition-transform duration-500 group-hover:scale-x-100"></span>
-      <span data-i18n="btn_download_cv"
-        class="relative z-10 group-hover:text-slate-900 transition-colors duration-300">Download CV</span>
-    </a>
-  </div>
-</div>
- 
-   
   </section>
- 
+
   <div class="fade-inn card">
     <section id="about" class="relative pb-32 px-4 mx-auto pt-24 font-brand max-w-6xl">
- 
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
- 
+
         <div class="reveal select-none">
-          <span data-i18n="about_badge" class="inline-block text-xs font-semibold tracking-wider text-white px-3 py-1 mb-4">
+          <span data-i18n="about_badge"
+            class="inline-block text-xs font-semibold tracking-wider text-white px-3 py-1 mb-4">
             ABOUT ME
           </span>
- 
+
           <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
             <span data-i18n="about_heading1">Turning curiosity into</span>
             <span data-i18n="about_heading2" class="text-secondary">real front-end experience.</span>
           </h2>
- 
+
           <p data-i18n="about_paragraph" class="text-slate-400 text-base leading-relaxed mb-8 max-w-md">
             My name is Caleb da Silva Lira Ribeiro. I work as a front-end developer, creating clean, pleasing digital
             solutions that exceed expectations, while always striving to incorporate development best practices. And I
             believe that every month without a solid digital presence is a month of customers going straight to the
             competitor who has already sorted this out.
           </p>
- 
+
         </div>
- 
+
         <div class="grid grid-cols-2 gap-6 reveal reveal-delay-1 select-none">
- 
+
           <div class="flex flex-col gap-2">
             <div
               class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
@@ -208,7 +227,7 @@
             <span class="text-2xl font-bold text-white">+1</span>
             <span data-i18n="stat_year" class="text-sm text-slate-400">Year Experience</span>
           </div>
- 
+
           <div class="flex flex-col gap-2">
             <div
               class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
@@ -217,7 +236,7 @@
             <span class="text-2xl font-bold text-white">15+</span>
             <span data-i18n="stat_projects" class="text-sm text-slate-400">Projects Completed</span>
           </div>
- 
+
           <div class="flex flex-col gap-2">
             <div
               class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
@@ -226,7 +245,7 @@
             <span class="text-2xl font-bold text-white">100%</span>
             <span data-i18n="stat_dedication" class="text-sm text-slate-400">Dedication</span>
           </div>
- 
+
           <div class="flex flex-col gap-2">
             <div
               class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
@@ -235,21 +254,22 @@
             <span class="text-2xl font-bold text-white">∞</span>
             <span data-i18n="stat_learn" class="text-sm text-slate-400">Willingness to Learn</span>
           </div>
- 
+
         </div>
       </div>
- 
+
     </section>
   </div>
- 
+
   <div class="fade-inn card">
     <section id="skills"
       class="h-auto py-20 px-10 font-brand bg-gradient-to-br from-slate-900 via-blue-950 to-emerald-950 text-white select-none">
       <h2 data-i18n="skills_title" class="text-3xl font-bold text-center mb-5 reveal">Technology Stack</h2>
-      <p data-i18n-html="skills_subtitle" class="text-center mb-8 font-semibold text-secondary reveal">The technologies I have affinity for to achieve
+      <p data-i18n-html="skills_subtitle" class="text-center mb-8 font-semibold text-secondary reveal">The technologies
+        I have affinity for to achieve
         better
         performance in <br>building web applications.</p>
- 
+
       <div class="py-6 px-4 space-y-10">
         <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg reveal">
           <h2 data-i18n="skills_dev_title" class="text-2xl font-bold mb-4 text-center">Development</h2>
@@ -268,7 +288,7 @@
                 <span class="text-sm font-medium">HTML5</span>
               </div>
             </div>
- 
+
             <div
               class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
               <div class="w-full h-24 sm:h-28 flex items-center justify-center">
@@ -279,7 +299,7 @@
                 <span class="text-sm font-medium">CSS</span>
               </div>
             </div>
- 
+
             <div
               class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
               <div class="w-full h-24 sm:h-28 flex items-center justify-center">
@@ -290,7 +310,7 @@
                 <span class="text-sm font-medium">JavaScript ES6+</span>
               </div>
             </div>
- 
+
             <div
               class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
               <div class="w-full h-24 sm:h-28 flex items-center justify-center">
@@ -301,7 +321,7 @@
                 <span class="text-sm font-medium">React.js</span>
               </div>
             </div>
- 
+
             <div
               class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
               <div class="w-full h-24 sm:h-28 flex items-center justify-center">
@@ -312,7 +332,7 @@
                 <span class="text-sm font-medium">PHP</span>
               </div>
             </div>
- 
+
             <div
               class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
               <div class="w-full h-24 sm:h-28 flex items-center justify-center">
@@ -329,7 +349,7 @@
             <i class="bi bi-chevron-right text-white"></i>
           </button>
         </div>
- 
+
         <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg reveal reveal-delay-1">
           <h2 data-i18n="skills_styling_title" class="text-2xl font-bold mb-4 text-center">Styling UI</h2>
           <div class="flex justify-center gap-6 flex-wrap">
@@ -366,7 +386,7 @@
             </div>
           </div>
         </div>
- 
+
         <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg reveal reveal-delay-2">
           <h2 data-i18n="skills_tools_title" class="text-2xl font-bold mb-4 text-center">Tools</h2>
           <button id="previousFront"
@@ -384,7 +404,7 @@
                 <span class="text-sm font-medium">Git</span>
               </div>
             </div>
- 
+
             <div
               class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
               <div class="w-full h-24 sm:h-28 flex items-center justify-center">
@@ -395,7 +415,7 @@
                 <span class="text-sm font-medium">Github</span>
               </div>
             </div>
- 
+
             <div
               class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
               <div class="w-full h-24 sm:h-28 flex items-center justify-center">
@@ -406,7 +426,7 @@
                 <span class="text-sm font-medium">NPM</span>
               </div>
             </div>
- 
+
             <div
               class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
               <div class="w-full h-24 sm:h-28 flex items-center justify-center">
@@ -417,7 +437,7 @@
                 <span class="text-sm font-medium">Yarn</span>
               </div>
             </div>
- 
+
             <div
               class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
               <div class="w-full h-24 sm:h-28 flex items-center justify-center">
@@ -428,7 +448,7 @@
                 <span class="text-sm font-medium">Vite</span>
               </div>
             </div>
- 
+
             <div
               class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
               <div class="w-full h-24 sm:h-28 flex items-center justify-center">
@@ -458,27 +478,29 @@
   </div>
   </section>
   </div>
- 
+
   <div class="fade-inn card">
     <section id="projects" class="py-20 bg-primary/80 font-brand select-none">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 data-i18n="projects_title" class="text-3xl font-bold text-center mb-12 reveal">My Projects</h2>
-        <p data-i18n-html="projects_subtitle" class="text-center mb-8 font-semibold text-secondary reveal">A range of projects I have developed in pursuit
+        <p data-i18n-html="projects_subtitle" class="text-center mb-8 font-semibold text-secondary reveal">A range of
+          projects I have developed in pursuit
           of
           improving
           my development skills.<br> All built with a focus on Web development and conflict resolution.</p>
- 
+
         <div class="projects-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
- 
+
           <div class="reveal select-none">
             <article class="project-card">
               <div class="project-image-container">
                 <img src="assets/img/Projeto-1.png" alt="Projeto-1" class="project-image" loading="lazy">
               </div>
- 
+
               <div class="p-6">
                 <h3 class="text-xl font-bold mb-2 text-white">SnapPdf</h3>
-                <p data-i18n="proj1_desc" class="text-gray-400 text-sm mb-4">A document conversion system for PDF uploads all in real time and
+                <p data-i18n="proj1_desc" class="text-gray-400 text-sm mb-4">A document conversion system for PDF
+                  uploads all in real time and
                   fully operational. The goal is to make the process as a convenient as possible.</p>
                 <div class="flex justify-between items-center">
                   <div class="flex gap-4">
@@ -496,16 +518,18 @@
               </div>
             </article>
           </div>
- 
+
           <div class="reveal reveal-delay-1">
             <article class="project-card">
               <div class="project-image-container">
                 <img src="assets/img/Projeto-2.png" alt="Projeto-2" class="project-image" loading="lazy">
               </div>
- 
+
               <div class="p-6">
                 <h3 class="text-xl font-bold mb-2 text-white">M7 Estetica Automotiva</h3>
-                <p data-i18n="proj2_desc" class="text-gray-400 text-sm mb-4">A landing page designed for customer conversion directly via WhatsApp, developed for M7 Estética Automotiva. A project that incorporates front-end concepts.</p>
+                <p data-i18n="proj2_desc" class="text-gray-400 text-sm mb-4">A landing page designed for customer
+                  conversion directly via WhatsApp, developed for M7 Estética Automotiva. A project that incorporates
+                  front-end concepts.</p>
                 <div class="flex justify-between items-center">
                   <a href="https://m7esteticaautomotiva.netlify.app/" target="_blank" data-i18n="btn_access"
                     class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-secondary rounded-lg hover:opacity-90 transition-opacity"><span>Access
@@ -515,16 +539,17 @@
               </div>
             </article>
           </div>
- 
+
           <div class="reveal reveal-delay-2">
             <article class="project-card">
               <div class="project-image-container">
                 <img src="assets/img/Projeto-3.png" alt="Projeto-3" class="project-image" loading="lazy">
               </div>
- 
+
               <div class="p-6">
                 <h3 class="text-xl font-bold mb-2 text-white">RepoFinder</h3>
-                <p data-i18n="proj3_desc" class="text-gray-400 text-sm mb-4">Important application that consumes the public Github API. The
+                <p data-i18n="proj3_desc" class="text-gray-400 text-sm mb-4">Important application that consumes the
+                  public Github API. The
                   project aims to consolidate knowledge in the study of APIs</p>
                 <div class="flex justify-between items-center">
                   <div class="flex gap-4">
@@ -541,16 +566,17 @@
               </div>
             </article>
           </div>
- 
+
           <div class="reveal reveal-delay-1">
             <article class="project-card">
               <div class="project-image-container">
                 <img src="assets/img/Projeto-4.png" alt="Projeto-4" class="project-image" loading="lazy">
               </div>
- 
+
               <div class="p-6">
                 <h3 class="text-xl font-bold mb-2 text-white">StudyFlow</h3>
-                <p data-i18n="proj4_desc" class="text-gray-400 text-sm mb-4">StudyFlow is a application designed to facilitate the organization
+                <p data-i18n="proj4_desc" class="text-gray-400 text-sm mb-4">StudyFlow is a application designed to
+                  facilitate the organization
                   of study materials or important notes.</p>
                 <div class="flex justify-between items-center">
                   <div class="flex gap-4">
@@ -567,16 +593,17 @@
               </div>
             </article>
           </div>
- 
+
           <div class="reveal reveal-delay-2">
             <article class="project-card">
               <div class="project-image-container">
                 <img src="assets/img/Projeto-5.png" alt="Projeto-5" class="project-image" loading="lazy">
               </div>
- 
+
               <div class="p-6">
                 <h3 class="text-xl font-bold mb-2 text-white">GrandHorizon</h3>
-                <p data-i18n="proj5_desc" class="text-gray-400 text-sm mb-4">Welcome to GrandHorizon, a premier hotel and inn booking system.
+                <p data-i18n="proj5_desc" class="text-gray-400 text-sm mb-4">Welcome to GrandHorizon, a premier hotel
+                  and inn booking system.
                   Featuring exceptional suites and a wide range of additional services to make your experience
                   unforgettable.</p>
                 <div class="flex justify-between items-center">
@@ -599,10 +626,12 @@
               <div class="project-image-container">
                 <img src="assets/img/Projeto-6.png" alt="Projeto-6" class="project-image" loading="lazy">
               </div>
- 
+
               <div class="p-6">
                 <h3 class="text-xl font-bold mb-2 text-white">VoxSneakers</h3>
-                <p data-i18n="proj6_desc" class="text-gray-400 text-sm mb-4">VoxSneakers is a modern e-commerce platform for buying and selling sneakers. Developed with a focus on user experience and seamless transactions. Some features include a sleek design, fast loading times, and a user-friendly interface.</p>
+                <p data-i18n="proj6_desc" class="text-gray-400 text-sm mb-4">VoxSneakers is a modern e-commerce platform
+                  for buying and selling sneakers. Developed with a focus on user experience and seamless transactions.
+                  Some features include a sleek design, fast loading times, and a user-friendly interface.</p>
                 <div class="flex justify-between items-center">
                   <div class="flex gap-4">
                     <a href="https://github.com/calebsv/VoxSneakers" target="_blank"
@@ -618,43 +647,45 @@
               </div>
             </article>
           </div>
- 
+
         </div>
       </div>
     </section>
   </div>
- 
+
   <div class="fade-inn card">
-  <section id="services" class="py-20 px-4 sm:px-6 font-brand select-none bg-primary/60">
-    <div class="max-w-6xl mx-auto">
- 
-      <h2 data-i18n="services_title" class="text-3xl font-bold text-center mb-3 reveal text-white">Services</h2>
-      <p data-i18n-html="services_subtitle" class="text-center mb-14 font-semibold text-secondary reveal">
-        My proposed solution for your situation, from scratch to delivery.<br> With the best possible practices and a focus on user experience.
-      </p>
- 
-      <div class="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-12 items-stretch reveal">
- 
-        <div id="servicesNav" class="flex lg:flex-col gap-3 lg:gap-4 justify-center lg:justify-start">
-        </div>
- 
-        <div class="relative min-h-[340px] sm:min-h-[300px] rounded-2xl border border-secondary/30
+    <section id="services" class="py-20 px-4 sm:px-6 font-brand select-none bg-primary/60">
+      <div class="max-w-6xl mx-auto">
+
+        <h2 data-i18n="services_title" class="text-3xl font-bold text-center mb-3 reveal text-white">Services</h2>
+        <p data-i18n-html="services_subtitle" class="text-center mb-14 font-semibold text-secondary reveal">
+          My proposed solution for your situation, from scratch to delivery.<br> With the best possible practices and a
+          focus on user experience.
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-12 items-stretch reveal">
+
+          <div id="servicesNav" class="flex lg:flex-col gap-3 lg:gap-4 justify-center lg:justify-start">
+          </div>
+
+          <div class="relative min-h-[340px] sm:min-h-[300px] rounded-2xl border border-secondary/30
                     bg-slate-900/60 backdrop-blur-md shadow-[0_0_40px_rgba(16,185,129,0.08)]
                     overflow-hidden">
-          <div id="serviceCard" class="p-8 sm:p-10 h-full flex flex-col justify-center transition-all duration-500 ease-out">
+            <div id="serviceCard"
+              class="p-8 sm:p-10 h-full flex flex-col justify-center transition-all duration-500 ease-out">
+            </div>
           </div>
+
         </div>
- 
       </div>
-    </div>
-  </section>
-</div>
- 
+    </section>
+  </div>
+
   <footer class="bg-primary border-t border-secondary py-10 font-brand select-none">
     <div class="container mx-auto px-6">
- 
+
       <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-10">
- 
+
         <div class="flex flex-col items-center md:items-start text-center md:text-left gap-3">
           <div class="flex items-center gap-2 font-bold text-xl">
             <span class="w-9 h-9 rounded-full bg-secondary flex items-center justify-center text-primary">
@@ -662,13 +693,13 @@
             </span>
             <span class="font-semibold text-white">Caleb Lira</span>
           </div>
- 
+
           <p data-i18n-html="footer_tagline" class="text-gray-300 max-w-xs">
             Front-End developer creating<br />
             interactive and professional interfaces.
           </p>
         </div>
- 
+
         <div class="flex flex-col items-center gap-3 text-center gap-3">
           <h3 data-i18n="footer_connect" class="font-semibold text-secondary">Connect</h3>
           <div class="flex justify-center gap-5 text-3xl text-white">
@@ -680,7 +711,7 @@
             </a>
           </div>
         </div>
- 
+
         <div class="text-center md:text-right">
           <h3 data-i18n="footer_links" class="text-secondary font-semibold mb-3">Links</h3>
           <ul class="space-y-2 text-gray-400">
@@ -691,17 +722,18 @@
             <li><a href="#services" data-i18n="nav_services" class="hover:text-white transition">Services</a></li>
           </ul>
         </div>
- 
- 
+
+
       </div>
- 
+
       <div class="mt-10 text-center text-gray-400 text-sm">
-        &copy; <span id="footer-year"></span> <span data-i18n="footer_copyright">Developed by Caleb Lira. All rights reserved.</span>
+        &copy; <span id="footer-year"></span> <span data-i18n="footer_copyright">Developed by Caleb Lira. All rights
+          reserved.</span>
       </div>
- 
+
     </div>
   </footer>
   <script src="script.js"></script>
 </body>
- 
+
 </html>
