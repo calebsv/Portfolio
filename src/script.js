@@ -36,77 +36,31 @@ document.addEventListener("mousemove", (e) => {
     glow.style.top = e.clientY - 80 + "px";
 });
 
-const slider = document.getElementById("frontSlider");
-const prevBtn = document.getElementById("prevFront");
-const nextBtn = document.getElementById("nextFront");
+function initSlider(sliderId, prevId, nextId) {
+    const sl = document.getElementById(sliderId);
+    const prev = document.getElementById(prevId);
+    const next = document.getElementById(nextId);
+    if (!sl || !prev || !next) return;
 
-function updateButtons() {
-    if (slider.scrollLeft <= 0) {
-        prevBtn.classList.add("opacity-0", "pointer-events-none");
-    } else {
-        prevBtn.classList.remove("opacity-0", "pointer-events-none");
-    }
+    const update = () => {
+        prev.classList.toggle("opacity-0", sl.scrollLeft <= 0);
+        prev.classList.toggle("pointer-events-none", sl.scrollLeft <= 0);
 
-    if (
-        slider.scrollLeft + slider.clientWidth >=
-        slider.scrollWidth - 5
-    ) {
-        nextBtn.classList.add("opacity-0", "pointer-events-none");
-    } else {
-        nextBtn.classList.remove("opacity-0", "pointer-events-none");
-    }
+        const atEnd = sl.scrollLeft + sl.clientWidth >= sl.scrollWidth - 5;
+        next.classList.toggle("opacity-0", atEnd);
+        next.classList.toggle("pointer-events-none", atEnd);
+    };
+
+    next.addEventListener("click", () => sl.scrollBy({ left: 220, behavior: "smooth" }));
+    prev.addEventListener("click", () => sl.scrollBy({ left: -220, behavior: "smooth" }));
+    sl.addEventListener("scroll", update);
+    window.addEventListener("resize", update);
+    update();
 }
-nextBtn.addEventListener("click", () => {
-    slider.scrollBy({
-        left: 220,
-        behavior: "smooth",
-    });
-});
-prevBtn.addEventListener("click", () => {
-    slider.scrollBy({
-        left: -220,
-        behavior: "smooth",
-    });
-});
-slider.addEventListener("scroll", updateButtons);
-updateButtons();
 
-
-const sliderr = document.getElementById("develoupSlider");
-const previBtn = document.getElementById("previousFront");
-const nextiBtn = document.getElementById("nextiousFront");
-
-
-function updateeButtons() {
-    if (sliderr.scrollLeft <= 0) {
-        previBtn.classList.add("opacity-0", "pointer-events-none");
-    } else {
-        previBtn.classList.remove("opacity-0", "pointer-events-none");
-    }
-
-    if (
-        sliderr.scrollLeft + sliderr.clientWidth >=
-        sliderr.scrollWidth - 5
-    ) {
-        nextiBtn.classList.add("opacity-0", "pointer-events-none");
-    } else {
-        nextiBtn.classList.remove("opacity-0", "pointer-events-none");
-    }
-}
-nextiBtn.addEventListener("click", () => {
-    sliderr.scrollBy({
-        left: 220,
-        behavior: "smooth",
-    });
-});
-previBtn.addEventListener("click", () => {
-    sliderr.scrollBy({
-        left: -220,
-        behavior: "smooth",
-    });
-});
-sliderr.addEventListener("scroll", updateeButtons);
-updateeButtons();
+initSlider("frontSlider", "prevFront", "nextFront");
+initSlider("stylingSlider", "prevStyling", "nextStyling");
+initSlider("develoupSlider", "previousFront", "nextiousFront");
 
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -426,7 +380,7 @@ window.addEventListener('scroll', () => {
             aria_back: 'Go back to previous page',
             aria_menu: 'Open menu',
             btn_view_projects: 'View My Projects',
-            btn_download_cv: 'Download CV',
+            btn_cta_wpp: 'Talk to me!',
             about_badge: 'ABOUT ME',
             about_heading1: 'Turning curiosity into',
             about_heading2: 'real front-end experience.',
@@ -468,7 +422,7 @@ window.addEventListener('scroll', () => {
             aria_back: 'Voltar para a página anterior',
             aria_menu: 'Abrir menu',
             btn_view_projects: 'Ver Meus Projetos',
-            btn_cta_wpp: 'Entrar em contato',
+            btn_cta_wpp: 'Fale comigo!',
             about_badge: 'SOBRE MIM',
             about_heading1: 'Transformando curiosidade em',
             about_heading2: 'experiência real em front-end.',

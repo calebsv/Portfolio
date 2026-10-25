@@ -51,8 +51,8 @@
 
     <div class="absolute inset-0 -z-10 pointer-events-none hero-bg"></div>
 
-    <nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent transition-all duration-300 ease-out z-50">
-      <div class="px-6 py-4 max-w-7xl mx-auto flex items-center justify-between">
+   <nav id="navbar" class="fixed z-50">
+  <div class="px-4 sm:px-6 py-2.5 flex items-center justify-between">
         <div class="nav-logo flex items-center gap-2 font-bold text-xl select-none">
           <a href="index.html" target="_self" data-i18n-aria="aria_back" aria-label="Go back to previous page" class="group w-9 h-9 flex items-center justify-center 
            rounded-full border border-secondary/50 
@@ -69,13 +69,10 @@
             class="w-9 h-9 flex items-center justify-center rounded-full bg-transparent border border-secondary text-primary font-bold">
             <img src="assets/img/favicon.png" alt="Logo"
               class="rounded-full hover:scale-110 transition-transform duration-300"></div>
-          <span
-            class="font-brand font-semibold hover:text-secondary transition-transform duration-300 transition-colors">
-            Caleb Lira</span>
+         <span class="hidden lg:inline font-brand font-semibold hover:text-secondary transition-colors duration-300">Caleb Lira</span>
         </div>
 
-        <div
-          class="hidden md:flex absolute left-1/2 -translate-x-1/2 flex items-center gap-10 font-brand text-lg select-none">
+      <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 lg:gap-10 font-brand text-base lg:text-lg select-none">
           <a href="#home" data-i18n="nav_home" class="nav-link hover:text-secondary transition-colors">Home</a>
           <a href="#about" data-i18n="nav_about" class="nav-link hover:text-secondary transition-colors">About</a>
           <a href="#skills" data-i18n="nav_skills" class="nav-link hover:text-secondary transition-colors">Skills</a>
@@ -165,7 +162,7 @@
 
       <p class="hx-hint">
         <i class="bi bi-arrow-down-right"></i>
-        <span data-i18n="hero_hint">Scroll to see more informations</span>
+        <span data-i18n="hero_hint" class="text-white/90">Scroll to see more <span class="text-secondary">informations!</span></span>
         <i class="bi bi-arrow-down-left"></i>
       </p>
 
@@ -180,7 +177,7 @@
           <span class="absolute inset-0 bg-gradient-to-r from-emerald-400 to-secondary scale-x-0 origin-left
                transition-transform duration-500 group-hover:scale-x-100"></span>
           <span data-i18n="btn_cta_wpp"
-            class="relative z-10 group-hover:text-slate-900 transition-colors duration-300">Entrar em contato</span>
+            class="relative z-10 group-hover:text-slate-900 transition-colors duration-300">Talk to me!</span>
         </a>
       </div>
     </div>
@@ -215,47 +212,51 @@
           </p>
 
         </div>
+<div class="reveal reveal-delay-1 select-none relative mx-auto w-full max-w-[420px] aspect-square">
 
-        <div class="grid grid-cols-2 gap-6 reveal reveal-delay-1 select-none">
+  <!-- brilho + anéis -->
+  <div class="about-glow"></div>
+  <div class="about-ring about-ring--solid"></div>
+  <div class="about-ring about-ring--dashed"></div>
 
-          <div class="flex flex-col gap-2">
-            <div
-              class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
-              <i class="bi bi-hourglass-top"></i>
-            </div>
-            <span class="text-2xl font-bold text-white">+1</span>
-            <span data-i18n="stat_year" class="text-sm text-slate-400">Year Experience</span>
-          </div>
+  <!-- FOTO (troque o src pela sua foto) -->
+  <div class="about-photo absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[54%] aspect-square rounded-full overflow-hidden">
+    <img src="assets/img/perfil.jpeg" alt="Caleb Lira" class="w-full h-full object-cover" />
+  </div>
 
-          <div class="flex flex-col gap-2">
-            <div
-              class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
-              <i class="fas fa-code"></i>
-            </div>
-            <span class="text-2xl font-bold text-white">15+</span>
-            <span data-i18n="stat_projects" class="text-sm text-slate-400">Projects Completed</span>
-          </div>
+  <!-- stats -->
+  <div class="stat-card absolute top-0 left-0">
+    <div class="stat-icon"><i class="bi bi-hourglass-top"></i></div>
+    <div class="leading-tight">
+      <span class="block text-lg sm:text-2xl font-bold text-white">+1</span>
+      <span data-i18n="stat_year" class="block text-[11px] sm:text-sm text-slate-400">Year Experience</span>
+    </div>
+  </div>
 
-          <div class="flex flex-col gap-2">
-            <div
-              class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
-              <i class="fas fa-user-tie"></i>
-            </div>
-            <span class="text-2xl font-bold text-white">100%</span>
-            <span data-i18n="stat_dedication" class="text-sm text-slate-400">Dedication</span>
-          </div>
+  <div class="stat-card absolute top-0 right-0" style="animation-delay:-1.2s">
+    <div class="stat-icon"><i class="fas fa-code"></i></div>
+    <div class="leading-tight">
+      <span class="block text-lg sm:text-2xl font-bold text-white">15+</span>
+      <span data-i18n="stat_projects" class="block text-[11px] sm:text-sm text-slate-400">Projects Completed</span>
+    </div>
+  </div>
 
-          <div class="flex flex-col gap-2">
-            <div
-              class="w-11 h-11 rounded-lg bg-gradient-to-br from-sky-900 to-slate-900 flex items-center justify-center text-secondary text-lg hover:scale-110 transition-transform duration-300">
-              <i class="bi bi-rocket-takeoff-fill"></i>
-            </div>
-            <span class="text-2xl font-bold text-white">∞</span>
-            <span data-i18n="stat_learn" class="text-sm text-slate-400">Willingness to Learn</span>
-          </div>
+  <div class="stat-card absolute bottom-0 left-0" style="animation-delay:-2.4s">
+    <div class="stat-icon"><i class="fas fa-user-tie"></i></div>
+    <div class="leading-tight">
+      <span class="block text-lg sm:text-2xl font-bold text-white">100%</span>
+      <span data-i18n="stat_dedication" class="block text-[11px] sm:text-sm text-slate-400">Dedication</span>
+    </div>
+  </div>
 
-        </div>
-      </div>
+  <div class="stat-card absolute bottom-0 right-0" style="animation-delay:-3.6s">
+    <div class="stat-icon"><i class="bi bi-rocket-takeoff-fill"></i></div>
+    <div class="leading-tight">
+      <span class="block text-lg sm:text-2xl font-bold text-white">∞</span>
+      <span data-i18n="stat_learn" class="block text-[11px] sm:text-sm text-slate-400">Willingness to Learn</span>
+    </div>
+  </div>
+</div>
 
     </section>
   </div>
@@ -349,42 +350,53 @@
           </button>
         </div>
 
-        <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg reveal reveal-delay-1">
-          <h2 data-i18n="skills_styling_title" class="text-2xl font-bold mb-4 text-center">Styling UI</h2>
-          <div class="flex justify-center gap-6 flex-wrap">
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/tailwindcss/tailwindcss-original.svg"
-                  class="w-16 h-16 skill-icon" alt="Tailwind CSS" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Tailwind CSS</span>
-              </div>
-            </div>
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/bootstrap/bootstrap-original.svg"
-                  class="w-16 h-16 skill-icon" alt="Bootstrap" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Bootstrap</span>
-              </div>
-            </div>
-            <div
-              class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
-              <div class="w-full h-24 sm:h-28 flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/figma/figma-original.svg"
-                  class="w-16 h-16 skill-icon" alt="Figma" />
-              </div>
-              <div class="text-center mt-2">
-                <span class="text-sm font-medium">Figma</span>
-              </div>
-            </div>
-          </div>
-        </div>
+     <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg reveal reveal-delay-1">
+  <h2 data-i18n="skills_styling_title" class="text-2xl font-bold mb-4 text-center">Styling UI</h2>
+
+  <button id="prevStyling"
+    class="opacity-0 pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
+    <i class="bi bi-chevron-left text-xl"></i>
+  </button>
+
+  <div class="flex gap-6 overflow-x-auto scroll-smooth px-12 md:justify-center" id="stylingSlider">
+
+    <div class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+      <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/tailwindcss/tailwindcss-original.svg"
+          class="w-16 h-16 skill-icon" alt="Tailwind CSS" />
+      </div>
+      <div class="text-center mt-2">
+        <span class="text-sm font-medium">Tailwind CSS</span>
+      </div>
+    </div>
+
+    <div class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+      <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/bootstrap/bootstrap-original.svg"
+          class="w-16 h-16 skill-icon" alt="Bootstrap" />
+      </div>
+      <div class="text-center mt-2">
+        <span class="text-sm font-medium">Bootstrap</span>
+      </div>
+    </div>
+
+    <div class="relative bg-gray-800 rounded-xl p-5 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl w-36 sm:w-44 cursor-pointer skill-card mt-4 flex-shrink-0">
+      <div class="w-full h-24 sm:h-28 flex items-center justify-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/figma/figma-original.svg"
+          class="w-16 h-16 skill-icon" alt="Figma" />
+      </div>
+      <div class="text-center mt-2">
+        <span class="text-sm font-medium">Figma</span>
+      </div>
+    </div>
+
+  </div>
+
+  <button id="nextStyling"
+    class="opacity-0 pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-primary hover:border-lime-500 hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center">
+    <i class="bi bi-chevron-right text-white"></i>
+  </button>
+</div>
 
         <div class="relative max-w-6xl mx-auto bg-slate-900 rounded-2xl p-6 shadow-lg reveal reveal-delay-2">
           <h2 data-i18n="skills_tools_title" class="text-2xl font-bold mb-4 text-center">Tools</h2>
