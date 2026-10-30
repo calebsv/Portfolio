@@ -90,32 +90,7 @@ window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
 });
 
-/* =========================================================
-   PARTICLES (background)
-========================================================= */
-(function () {
-    const container = document.getElementById('particles');
-    if (!container) return;
-    const count = 34;
-    for (let i = 0; i < count; i++) {
-        const dot = document.createElement('span');
-        dot.className = 'particle';
-        dot.style.left = Math.random() * 100 + '%';
-        dot.style.top = Math.random() * 100 + '%';
-        const size = 1 + Math.random() * 2;
-        dot.style.width = size + 'px';
-        dot.style.height = size + 'px';
-        dot.style.animationDelay = (Math.random() * 6) + 's';
-        dot.style.animationDuration = (4 + Math.random() * 4) + 's';
-        container.appendChild(dot);
-    }
-})();
 
-/* =========================================================
-   SERVICES — now bilingual (EN/PT)
-   window.__renderServices(lang) re-renders in place, keeping
-   whichever card is currently selected.
-========================================================= */
 (function () {
     const servicesData = {
         en: [
@@ -412,6 +387,12 @@ window.addEventListener('scroll', () => {
             footer_copyright: 'Developed by Caleb Lira. All rights reserved.',
             hero_label: '<b>Front-end</b> <i>developer</i>',
             hero_hint: 'Scroll to see more informations',
+            cta_eyebrow: 'Got a project in mind?',
+            cta_title: "Let's bring it to life",
+            cta_text: "Get in touch and let's talk about your project. I'm available to discuss ideas, provide solutions and turn your vision into reality.",
+            cta_btn_wpp: 'Chat on WhatsApp',
+            cta_btn_email: 'Send an email',
+            cta_footer: 'Caleb Lira · Front-End Developer',
         },
         pt: {
             nav_home: 'Início',
@@ -454,6 +435,12 @@ window.addEventListener('scroll', () => {
             footer_copyright: 'Desenvolvido por Caleb Lira. Todos os direitos reservados.',
             hero_label: '<b>Desenvolvedor</b> <i>front-end</i>',
             hero_hint: 'Role para ver mais informações',
+            cta_eyebrow: 'Tem um projeto em mente?',
+            cta_title: 'Vamos tirar ele do papel',
+            cta_text: 'Entre em contato comigo e vamos conversar sobre o seu projeto. Estou disponível para discutir ideias, fornecer soluções e transformar sua visão em realidade.',
+            cta_btn_wpp: 'Chamar no WhatsApp',
+            cta_btn_email: 'Enviar e-mail',
+            cta_footer: 'Caleb Lira · Desenvolvedor Front-End',
         }
     };
 
@@ -516,4 +503,29 @@ window.addEventListener('scroll', () => {
 
     window.translations = translations;
     window.applyLanguage = applyLanguage;
+
+    let switching = false;
+
+function changeLanguage(next) {
+    if (switching) return; // evita clique duplo durante a animação
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+        applyLanguage(next);
+        return;
+    }
+
+    switching = true;
+    document.body.classList.add('lang-out');
+
+    setTimeout(() => {
+        applyLanguage(next); // troca o texto com tudo invisível
+        document.body.classList.replace('lang-out', 'lang-in');
+
+        setTimeout(() => {
+            document.body.classList.remove('lang-in');
+            switching = false;
+        }, 300);
+    }, 200);
+}
 })();

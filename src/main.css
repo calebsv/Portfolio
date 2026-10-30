@@ -898,3 +898,11 @@ nav#navbar #menuBtn {
 }
 #stylingSlider::-webkit-scrollbar { display: none; }
 #stylingSlider { scrollbar-width: none; }
+
+.window {
+    background-color: var(--surface); /* cor de reserva enquanto a imagem carrega */
+  background-image: url('assets/img/Gradiente Suave.jpg'); /* imagem de fundo */
+  background-size: cover;      /* preenche sem distorcer */
+  background-position: center; /* centraliza o enquadramento */
+  background-repeat: no-repeat;
+}
