@@ -496,8 +496,9 @@ window.addEventListener('scroll', () => {
 
     if (langBtn) {
         langBtn.addEventListener('click', () => {
+            if (switching) return;
             lang = lang === 'en' ? 'pt' : 'en';
-            applyLanguage(lang);
+            changeLanguage(lang);
         });
     }
 
@@ -506,26 +507,26 @@ window.addEventListener('scroll', () => {
 
     let switching = false;
 
-function changeLanguage(next) {
-    if (switching) return; // evita clique duplo durante a animação
+    function changeLanguage(next) {
+        if (switching) return; // evita clique duplo durante a animação
 
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion) {
-        applyLanguage(next);
-        return;
-    }
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduceMotion) {
+            applyLanguage(next);
+            return;
+        }
 
-    switching = true;
-    document.body.classList.add('lang-out');
-
-    setTimeout(() => {
-        applyLanguage(next); // troca o texto com tudo invisível
-        document.body.classList.replace('lang-out', 'lang-in');
+        switching = true;
+        document.body.classList.add('lang-out');
 
         setTimeout(() => {
-            document.body.classList.remove('lang-in');
-            switching = false;
-        }, 300);
-    }, 200);
-}
+            applyLanguage(next); // troca o texto com tudo invisível
+            document.body.classList.replace('lang-out', 'lang-in');
+
+            setTimeout(() => {
+                document.body.classList.remove('lang-in');
+                switching = false;
+            }, 300);
+        }, 200);
+    }
 })();
